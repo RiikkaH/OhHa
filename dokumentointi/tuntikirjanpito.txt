@@ -1,3 +1,7 @@
 Tuntikirjanpito:
 
 29.10; aiheen valinta, githupin asennus ja suunnitelman teko, noin tunti
+31.10; suunnittelua, noin tunti
+1.11; suunnittelua ja koodausta, ½-1 h
+3.11; suunnittelua ja koodausta, ½-1 h
+5.11; ensimmäiset testit, vartti
