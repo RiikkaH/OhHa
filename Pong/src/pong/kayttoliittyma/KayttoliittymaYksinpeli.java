@@ -1,24 +1,22 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package pong.kayttoliittyma;
 
 import java.awt.Container;
 import java.awt.Dimension;
 import javax.swing.JFrame;
 import javax.swing.WindowConstants;
-import pong.logiikka.Yksinpeli;
 
-
-public class Kayttoliittyma implements Runnable{
+/**
+ *
+ * @author Huusari Riikka
+ */
+public class KayttoliittymaYksinpeli implements Runnable{
     private JFrame frame;
-    private Yksinpeli yksinpeli;
-    public Kayttoliittyma(){
-        this.yksinpeli=new Yksinpeli();
+    public KayttoliittymaYksinpeli(){
+        
     }
     @Override
-    public void run(){
+    public void run() {
         frame =new JFrame("PONG");
         frame.setPreferredSize(new Dimension(500, 500));
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
@@ -26,13 +24,11 @@ public class Kayttoliittyma implements Runnable{
         frame.pack();
         frame.setVisible(true);
     }
-
-    private void luoKomponentit(Container container) {
-        //luodaan piirtoalusta ja silleen
+    private void luoKomponentit(Container container){
         
     }
-
     public JFrame getFrame() {
         return frame;
     }
+    
 }

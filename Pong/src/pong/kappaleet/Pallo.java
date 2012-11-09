@@ -50,6 +50,16 @@ public class Pallo {
     public int getY(){
         return this.y;
     }
+    public void setYMuutos(int uusiYMuutos){
+        if(uusiYMuutos == -1 || uusiYMuutos==1){
+            this.yMuutos=uusiYMuutos;
+        }
+    }
+    public void setXMuutos(int uusiXMuutos){
+        if(uusiXMuutos == -1 || uusiXMuutos==1){
+            this.xMuutos=uusiXMuutos;
+        }
+    }
     public int getYMuutos(){
         return yMuutos;
     }
