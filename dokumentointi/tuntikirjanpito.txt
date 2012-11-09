@@ -5,3 +5,5 @@ Tuntikirjanpito:
 1.11; suunnittelua ja koodausta, ½-1 h
 3.11; suunnittelua ja koodausta, ½-1 h
 5.11; ensimmäiset testit, vartti
+8.11; koodailua, ½h
+9.11; koodailua ja ihmettelyä ja sekoilua githubin kanssa 1h
