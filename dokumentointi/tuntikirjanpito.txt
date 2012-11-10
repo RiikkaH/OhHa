@@ -7,3 +7,4 @@ Tuntikirjanpito:
 5.11; ensimmäiset testit, vartti
 8.11; koodailua, ½h
 9.11; koodailua ja ihmettelyä ja sekoilua githubin kanssa 1h
+10.11 koodailua 1h
