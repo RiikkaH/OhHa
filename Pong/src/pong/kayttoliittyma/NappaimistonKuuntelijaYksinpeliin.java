@@ -13,10 +13,10 @@ import pong.kappaleet.Palkki;
  *
  * @author Huusari Riikka
  */
-public class NappaimistonKuuntelija implements KeyListener{
+public class NappaimistonKuuntelijaYksinpeliin implements KeyListener{
     private Palkki palkki;
     private Component component;
-    public NappaimistonKuuntelija(Palkki palkki, Component component){
+    public NappaimistonKuuntelijaYksinpeliin(Palkki palkki, Component component){
         this.palkki=palkki;
         this.component=component;
     }

@@ -4,12 +4,11 @@
  */
 package pong.kayttoliittyma;
 
+import java.awt.BorderLayout;
 import java.awt.Container;
 import java.awt.Dimension;
-import javax.swing.BoxLayout;
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.WindowConstants;
+import java.awt.GridLayout;
+import javax.swing.*;
 import pong.logiikka.Yksinpeli;
 
 
@@ -30,15 +29,21 @@ public class Kayttoliittyma implements Runnable{
     }
 
     private void luoKomponentit(Container container) {
-        BoxLayout layout = new BoxLayout(container,BoxLayout.Y_AXIS);
-        container.setLayout(layout);
         
-        JButton nappi1 = new JButton("Yksinpeli");
-        JButton nappi2 = new JButton("Kaksinpeli");
-        container.add(nappi1);
-        container.add(nappi2);
+        container.add(luoValikko(), BorderLayout.CENTER);
         
-        
+    }
+    private JPanel luoValikko() {
+        JPanel panel = new JPanel(new GridLayout(2, 1));
+        JButton yksinpeli = new JButton("Yksinpeli");
+        JButton kaksinpeli = new JButton("Kaksinpeli");
+        Napin1Kuuntelija kuuntelija1 = new Napin1Kuuntelija();
+        Napin2Kuuntelija kuuntelija2 = new Napin2Kuuntelija();
+        yksinpeli.addActionListener(kuuntelija1);
+        kaksinpeli.addActionListener(kuuntelija2);
+        panel.add(yksinpeli);
+        panel.add(kaksinpeli);
+        return panel;
     }
 
     public JFrame getFrame() {

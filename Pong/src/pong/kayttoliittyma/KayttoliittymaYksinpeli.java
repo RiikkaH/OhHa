@@ -5,6 +5,8 @@ import java.awt.Container;
 import java.awt.Dimension;
 import javax.swing.JFrame;
 import javax.swing.WindowConstants;
+import pong.logiikka.Peli;
+import pong.logiikka.Yksinpeli;
 
 /**
  *
@@ -12,7 +14,10 @@ import javax.swing.WindowConstants;
  */
 public class KayttoliittymaYksinpeli implements Runnable{
     private JFrame frame;
+    private Peli peli;
+    private Piirtoalusta alusta;
     public KayttoliittymaYksinpeli(){
+        peli = new Yksinpeli();
         
     }
     @Override
@@ -25,7 +30,12 @@ public class KayttoliittymaYksinpeli implements Runnable{
         frame.setVisible(true);
     }
     private void luoKomponentit(Container container){
-        
+        alusta = new Piirtoalusta(peli);
+        container.add( alusta);
+        frame.addKeyListener(new NappaimistonKuuntelijaYksinpeliin(peli.getPalkki1(),alusta));
+    }
+    public Paivitettava getPaivitettava(){
+        return alusta;
     }
     public JFrame getFrame() {
         return frame;
