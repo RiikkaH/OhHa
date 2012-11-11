@@ -41,4 +41,22 @@ public class YksinpeliTest {
         peli.actionPerformed(null);
         //mites tätä nyt sitten testataan jos on tuo actionPerformed juttu???
     }
+    //@Test 
+    public void tietokoneLiikuttaaPalkkiaYlosKunPalloOnYlempana(){
+        peli.getPallo().setY(40);
+        peli.liikutaTietokoneenPalkkia();
+        assertEquals(peli.getPalkki2().getY(),199);
+    }
+    @Test
+    public void tietokoneLiikuttaaPalkkiaAlasKunPalloOnAlempana(){
+        peli.getPallo().setY(300);
+        peli.liikutaTietokoneenPalkkia();
+        assertEquals(peli.getPalkki2().getY(),201);
+    }
+    @Test
+    public void tietokoneEiLiikutaPalkkiaKunPalloOnSamallaKorkeudella(){
+        peli.getPallo().setY(200);
+        peli.liikutaTietokoneenPalkkia();
+        assertEquals(peli.getPalkki2().getY(),200);
+    }
 }

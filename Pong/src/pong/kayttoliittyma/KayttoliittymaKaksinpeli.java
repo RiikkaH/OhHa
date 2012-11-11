@@ -28,7 +28,8 @@ public class KayttoliittymaKaksinpeli implements Runnable{
     private void luoKomponentit(Container container){
         alusta = new Piirtoalusta(peli);
         container.add( alusta);
-        frame.addKeyListener(new NappaimistonKuuntelijaKaksinpeliin(peli.getPalkki1(),peli.getPalkki2(),alusta));
+        frame.addKeyListener(new NappaimistonKuuntelijaKaksinpeliin(peli.getPalkki1(),alusta));
+        frame.addKeyListener(new NappaimistonKuuntelijaYksinpeliin(peli.getPalkki2(), alusta));
     }
     public Paivitettava getPaivitettava(){
         return alusta;

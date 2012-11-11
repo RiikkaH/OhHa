@@ -15,12 +15,12 @@ import pong.kappaleet.Palkki;
  */
 public class NappaimistonKuuntelijaKaksinpeliin implements KeyListener{
     private Palkki palkki1;
-    private Palkki palkki2;
+
     private Component component;
-    public NappaimistonKuuntelijaKaksinpeliin(Palkki palkki1, Palkki palkki2, Component component){
+    public NappaimistonKuuntelijaKaksinpeliin(Palkki palkki1, Component component){
         this.component=component;
         this.palkki1=palkki1;
-        this.palkki2=palkki2;
+        
     }
 
     @Override
@@ -30,11 +30,7 @@ public class NappaimistonKuuntelijaKaksinpeliin implements KeyListener{
 
     @Override
     public void keyPressed(KeyEvent ke) {
-        if (ke.getKeyCode() == KeyEvent.VK_UP) {
-            palkki2.liikuYlos();
-        }else if(ke.getKeyCode() == KeyEvent.VK_DOWN) {
-            palkki2.liikuAlas();
-        }else if(ke.getKeyCode() == KeyEvent.VK_W){
+         if(ke.getKeyCode() == KeyEvent.VK_W){
             palkki1.liikuYlos();
         }else if(ke.getKeyCode() == KeyEvent.VK_S){
             palkki1.liikuAlas(); 
