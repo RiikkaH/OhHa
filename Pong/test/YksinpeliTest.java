@@ -34,14 +34,8 @@ public class YksinpeliTest {
     //
     // @Test
     // public void hello() {}
-    @Test
-    public void kunPalloOsuuYlapalkkiinNiinSuuntaMuuttuu(){
-        peli.getPallo().setY(16);
-        peli.getPallo().setYMuutos(-1);
-        peli.actionPerformed(null);
-        //mites tätä nyt sitten testataan jos on tuo actionPerformed juttu???
-    }
-    //@Test 
+    
+    @Test 
     public void tietokoneLiikuttaaPalkkiaYlosKunPalloOnYlempana(){
         peli.getPallo().setY(40);
         peli.liikutaTietokoneenPalkkia();
@@ -55,8 +49,8 @@ public class YksinpeliTest {
     }
     @Test
     public void tietokoneEiLiikutaPalkkiaKunPalloOnSamallaKorkeudella(){
-        peli.getPallo().setY(200);
+        peli.getPallo().setY(205);
         peli.liikutaTietokoneenPalkkia();
-        assertEquals(peli.getPalkki2().getY(),200);
+        assertEquals(200, peli.getPalkki2().getY());
     }
 }

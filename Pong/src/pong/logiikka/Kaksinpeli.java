@@ -22,20 +22,14 @@ public class Kaksinpeli extends Peli implements ActionListener{
     @Override
     public void actionPerformed(ActionEvent e) {
         pallo.liiku();
-        if(pallo.getY()-5==10 || pallo.getY()+5 == 455){
+        if(palloOsuuYlapalkkiin()){
             pallo.kaannaY();
-        }if(pallo.getX()+5==470){
-            if(pallo.getY()>palkki2.getY() & pallo.getY()<palkki2.getY()+40){
-                pallo.kaannaX();
-            } else{
-                jatkuu=false;
-            }
-        }if(pallo.getX()-5 ==20){
-            if(pallo.getY()>palkki1.getY() & pallo.getY()<palkki1.getY()+40){
-                pallo.kaannaX();
-            }else{
-                jatkuu=false;
-            }
+        }if(palloOsuuAlapalkkiin()){
+            pallo.kaannaY();
+        }if(palloOsuuVasempaanPalkkiin()){
+            pallo.kaannaX();
+        }if(palloOsuuOikeaanPalkkiin()){
+            pallo.kaannaX();
         }
         paivitettava.paivita();
     }
