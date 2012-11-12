@@ -26,6 +26,8 @@ public class Kayttoliittyma implements Runnable{
         luoKomponentit(frame.getContentPane());
         frame.pack();
         frame.setVisible(true);
+        
+        //frame.dispose poistaa näkyvistä
     }
 
     private void luoKomponentit(Container container) {
