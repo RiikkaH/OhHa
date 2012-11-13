@@ -11,9 +11,11 @@ package pong.kappaleet;
 public class Palkki {
     private int x;
     private int y;
+    private int nopeus;
     public Palkki(int x){
         this.x=x;
         this.y=200;
+        this.nopeus=0;
         
         //x ja y ovat koordinaatit, x asetetaan pelissä, y tässä
         //Huom, settereitä tuskin tarvitsee, mutta olkoon nyt
@@ -37,6 +39,12 @@ public class Palkki {
     }
     public int getY(){
         return this.y;
+    }
+    public void setNopeus(int uusiNopeus){
+        this.nopeus=uusiNopeus;
+    }
+    public int getNopeus(){
+        return nopeus;
     }
 
 }
