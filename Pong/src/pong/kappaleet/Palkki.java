@@ -16,16 +16,13 @@ public class Palkki {
         this.x=x;
         this.y=200;
         this.nopeus=0;
-        
+        //jos nopeus on positiivista, liikkuu palkki alas
         //x ja y ovat koordinaatit, x asetetaan pelissä, y tässä
         //Huom, settereitä tuskin tarvitsee, mutta olkoon nyt
     }
     
-    public void liikuAlas(){
-        y++;
-    }
-    public void liikuYlos(){
-        y--;
+    public void liiku(){
+        y=y+nopeus;
     }
     
     public void setX(int uusiX){

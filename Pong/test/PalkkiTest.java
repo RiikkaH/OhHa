@@ -39,22 +39,25 @@ public class PalkkiTest {
     // public void hello() {}
     @Test
     public void palkkiLiikkuuAlasOikein(){
-        palkki.liikuAlas();
-        palkki.liikuAlas();
+        palkki.setNopeus(2);
+        palkki.liiku();
         assertEquals(palkki.getY(),202);
     }
     @Test
     public void palkkiLiikkuuYlosOikein(){
-        palkki.liikuYlos();
-        palkki.liikuYlos();
+        palkki.setNopeus(-2);
+        palkki.liiku();
         assertEquals(palkki.getY(),198);
     }
     @Test
     public void palkkiaLiikutetaanYlosjaAlas(){
-        palkki.liikuAlas();
-        palkki.liikuAlas();
-        palkki.liikuYlos();
-        palkki.liikuAlas();
+        palkki.setNopeus(1);
+        palkki.liiku();
+        palkki.liiku();
+        palkki.setNopeus(-1);
+        palkki.liiku();
+        palkki.setNopeus(1);
+        palkki.liiku();
         assertEquals(palkki.getY(),202);
     }
 }

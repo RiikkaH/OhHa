@@ -20,11 +20,13 @@ public class Yksinpeli extends Peli implements ActionListener{
         
     }
     
-    public void liikutaTietokoneenPalkkia(){
-        if(pallo.getY()<palkki2.getY()){
-            palkki2.liikuYlos();
-        }if(pallo.getY()> palkki2.getY()+40){
-            palkki2.liikuAlas();
+    public void muutaTietokoneenPalkinNopeutta(){
+        if(pallo.getY()<palkki1.getY()){
+            palkki1.setNopeus(-2);
+        }else if(pallo.getY()> palkki1.getY()+40){
+            palkki1.setNopeus(2);
+        }else{
+            palkki1.setNopeus(0);
         }
     }
     
@@ -36,7 +38,9 @@ public class Yksinpeli extends Peli implements ActionListener{
     public void actionPerformed(ActionEvent e) {
         //ja mikähän ihme tämän sitten laukaisee??
         pallo.liiku();
-        liikutaTietokoneenPalkkia();
+        muutaTietokoneenPalkinNopeutta();
+        palkki1.liiku();
+        palkki2.liiku();
         if(palloOsuuYlapalkkiin()){
             pallo.kaannaY();
         }if(palloOsuuAlapalkkiin()){

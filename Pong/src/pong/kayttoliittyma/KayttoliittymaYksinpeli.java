@@ -32,7 +32,7 @@ public class KayttoliittymaYksinpeli implements Runnable{
     private void luoKomponentit(Container container){
         alusta = new Piirtoalusta(peli);
         container.add( alusta);
-        frame.addKeyListener(new NappaimistonKuuntelijaYksinpeliin(peli.getPalkki1(),alusta));
+        frame.addKeyListener(new NappaimistonKuuntelija(peli,alusta));
     }
     public Paivitettava getPaivitettava(){
         return alusta;
