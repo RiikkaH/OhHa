@@ -60,4 +60,24 @@ public class PeliTest {
         peli.getPallo().liiku();
         assertEquals(true, peli.palloOsuuOikeaanPalkkiin());
     }
+    @Test 
+    public void palloMeneeVasemmanReunanYli(){
+        peli.getPallo().setX(-5);
+        assertEquals(true, peli.palloMeneeVasemmanReunanYli());
+    }
+    @Test 
+    public void palloMeneeOikeanReunanYli(){
+        peli.getPallo().setX(505);
+        assertEquals(true, peli.palloMeneeOikeanReunanYli());
+    }
+    @Test
+    public void palloOnReilustiOhiVasemmanReunan(){
+        peli.getPallo().setX(-10);
+        assertEquals(true, peli.palloMeneeVasemmanReunanYli());
+    }
+    @Test
+    public void palloOnReilustiOhiOikeanReunan(){
+        peli.getPallo().setX(550);
+        assertEquals(true, peli.palloMeneeOikeanReunanYli());
+    }
 }

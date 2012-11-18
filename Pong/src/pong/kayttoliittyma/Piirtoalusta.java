@@ -17,10 +17,12 @@ import pong.logiikka.Peli;
  * @author Huusari Riikka
  */
 public class Piirtoalusta extends JPanel implements Paivitettava{
+    private Peli peli;
     private Pallo pallo;
     private Palkki palkki1;
     private Palkki palkki2;
     public Piirtoalusta(Peli peli){
+        this.peli =peli;
         super.setBackground(Color.GRAY);
         this.pallo=peli.getPallo();
         this.palkki1=peli.getPalkki1();
@@ -29,7 +31,9 @@ public class Piirtoalusta extends JPanel implements Paivitettava{
     @Override
     protected void paintComponent(Graphics graphics) {
         super.paintComponent(graphics);
-        graphics.setColor(Color.MAGENTA);
+        graphics.setColor(Color.CYAN);
+        graphics.drawString(""+ peli.getTilasto1(), 10, 25);
+        graphics.drawString(""+ peli.getTilasto2(), 470, 25);
         graphics.fillRect(palkki1.getX(), palkki1.getY(), 10, 40);
         graphics.fillRect(palkki2.getX(), palkki2.getY(), 10, 40);
         graphics.fillOval(pallo.getX(), pallo.getY(), 10, 10);

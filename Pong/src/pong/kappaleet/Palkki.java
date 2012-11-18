@@ -18,7 +18,6 @@ public class Palkki {
         this.nopeus=0;
         //jos nopeus on positiivista, liikkuu palkki alas
         //x ja y ovat koordinaatit, x asetetaan pelissä, y tässä
-        //Huom, settereitä tuskin tarvitsee, mutta olkoon nyt
     }
     
     public void liiku(){

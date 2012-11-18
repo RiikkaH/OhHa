@@ -18,7 +18,6 @@ public class KayttoliittymaYksinpeli implements Runnable{
     private Piirtoalusta alusta;
     public KayttoliittymaYksinpeli(){
         peli = new Yksinpeli();
-        
     }
     @Override
     public void run() {
@@ -28,9 +27,11 @@ public class KayttoliittymaYksinpeli implements Runnable{
         luoKomponentit(frame.getContentPane());
         frame.pack();
         frame.setVisible(true);
+        new Thread(peli).start();
     }
     private void luoKomponentit(Container container){
         alusta = new Piirtoalusta(peli);
+        peli.setPaivitettava(alusta); 
         container.add( alusta);
         frame.addKeyListener(new NappaimistonKuuntelija(peli,alusta));
     }
@@ -39,6 +40,9 @@ public class KayttoliittymaYksinpeli implements Runnable{
     }
     public JFrame getFrame() {
         return frame;
+    }
+    public Peli getPeli(){
+        return this.peli;
     }
     
 }

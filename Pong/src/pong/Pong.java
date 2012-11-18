@@ -19,5 +19,6 @@ public class Pong {
     public static void main(String[] args) {
         Kayttoliittyma kayttoliittyma = new Kayttoliittyma();
         SwingUtilities.invokeLater(kayttoliittyma);
+        
     }
 }

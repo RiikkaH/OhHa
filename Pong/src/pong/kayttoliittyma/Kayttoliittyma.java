@@ -27,7 +27,6 @@ public class Kayttoliittyma implements Runnable{
         frame.pack();
         frame.setVisible(true);
         
-        //frame.dispose poistaa näkyvistä
     }
 
     private void luoKomponentit(Container container) {
@@ -39,8 +38,8 @@ public class Kayttoliittyma implements Runnable{
         JPanel panel = new JPanel(new GridLayout(2, 1));
         JButton yksinpeli = new JButton("Yksinpeli");
         JButton kaksinpeli = new JButton("Kaksinpeli");
-        Napin1Kuuntelija kuuntelija1 = new Napin1Kuuntelija();
-        Napin2Kuuntelija kuuntelija2 = new Napin2Kuuntelija();
+        Napin1Kuuntelija kuuntelija1 = new Napin1Kuuntelija(frame);
+        Napin2Kuuntelija kuuntelija2 = new Napin2Kuuntelija(frame);
         yksinpeli.addActionListener(kuuntelija1);
         kaksinpeli.addActionListener(kuuntelija2);
         panel.add(yksinpeli);

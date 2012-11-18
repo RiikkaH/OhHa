@@ -50,7 +50,7 @@ public class NappaimistonKuuntelija implements KeyListener{
 
     @Override
     public void keyTyped(KeyEvent ke) {
-        throw new UnsupportedOperationException("Not supported yet.");
+        
     }
 
     @Override
