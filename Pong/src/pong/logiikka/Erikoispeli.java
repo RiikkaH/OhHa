@@ -2,14 +2,15 @@
 package pong.logiikka;
 
 
-
-
-public class Kaksinpeli extends Peli implements Runnable{
+/**
+ *
+ * @author Huusari Riikka
+ */
+public class Erikoispeli extends Peli implements Runnable{
     
-    
-    public Kaksinpeli(){ 
+    public Erikoispeli(){
+
     }
-
     @Override
     public void run() {
         int i=0;
@@ -17,6 +18,8 @@ public class Kaksinpeli extends Peli implements Runnable{
             pallo.liiku();
             palkki1.liiku();
             palkki2.liiku();
+            hamaysPallo1.liiku();
+            hamaysPallo2.liiku();
             if(palloOsuuYlapalkkiin()){
                 pallo.kaannaY();
             }if(palloOsuuAlapalkkiin()){

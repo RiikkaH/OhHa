@@ -36,10 +36,10 @@ public class Piirtoalusta extends JPanel implements Paivitettava{
         graphics.drawString(""+ peli.getTilasto2(), 470, 25);
         graphics.fillRect(palkki1.getX(), palkki1.getY(), 10, 40);
         graphics.fillRect(palkki2.getX(), palkki2.getY(), 10, 40);
-        graphics.fillOval(pallo.getX(), pallo.getY(), 10, 10);
+        graphics.fillRect(pallo.getX(), pallo.getY(), 10, 10);
         graphics.setColor(Color.DARK_GRAY);
         graphics.fillRect(0, 0, 500, 10);
-        graphics.fillRect(0, 455, 500, 10);
+        graphics.fillRect(0, 457 , 500, 10);
     }
 
     @Override

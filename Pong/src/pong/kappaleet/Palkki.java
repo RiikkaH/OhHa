@@ -21,7 +21,13 @@ public class Palkki {
     }
     
     public void liiku(){
-        y=y+nopeus;
+        if(y+nopeus>=457-40){
+            y=457-40;
+        }if(y+nopeus<=10){
+            y=10;
+        }else{
+            y=y+nopeus;
+        }
     }
     
     public void setX(int uusiX){

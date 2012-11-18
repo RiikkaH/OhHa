@@ -35,15 +35,19 @@ public class Kayttoliittyma implements Runnable{
         
     }
     private JPanel luoValikko() {
-        JPanel panel = new JPanel(new GridLayout(2, 1));
+        JPanel panel = new JPanel(new GridLayout(3, 1));
         JButton yksinpeli = new JButton("Yksinpeli");
         JButton kaksinpeli = new JButton("Kaksinpeli");
+        JButton erikoispeli = new JButton("Erikoispeli");
         Napin1Kuuntelija kuuntelija1 = new Napin1Kuuntelija(frame);
         Napin2Kuuntelija kuuntelija2 = new Napin2Kuuntelija(frame);
+        Napin3Kuuntelija kuuntelija3 = new Napin3Kuuntelija(frame);
         yksinpeli.addActionListener(kuuntelija1);
         kaksinpeli.addActionListener(kuuntelija2);
+        erikoispeli.addActionListener(kuuntelija3);
         panel.add(yksinpeli);
         panel.add(kaksinpeli);
+        panel.add(erikoispeli);
         return panel;
     }
 

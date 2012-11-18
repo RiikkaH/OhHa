@@ -11,23 +11,28 @@ package pong.kappaleet;
 public class Pallo {
     private int x;
     private int y;
-    private int xMuutos;
-    private int yMuutos;
+    private double xMuutos;
+    private double yMuutos;
 
     public Pallo(){
         this.x = 250;
         this.y=250;
-        this.xMuutos=1;
-        this.yMuutos=1;
+        this.xMuutos=1.25;
+        this.yMuutos=1.25;
 
 
         //x ja y koordinaatit
     }
     
     public void liiku(){
-        
-        x += xMuutos;
-        y += yMuutos;
+        if(y+yMuutos <10){
+            y=10;
+        }else if(y+yMuutos > 447){
+            y=447;
+        }else{
+            x += xMuutos;
+            y += yMuutos;
+        }
     }
     public void kaannaY(){
         yMuutos *= -1; 
@@ -35,8 +40,6 @@ public class Pallo {
     public void kaannaX(){
         xMuutos *= -1;
     }
-    
-    //tarvitseeko y:lle ja x:lle settereitä?
     
     public void setX(int uusiX){
         this.x =uusiX;
@@ -50,20 +53,16 @@ public class Pallo {
     public int getY(){
         return this.y;
     }
-    public void setYMuutos(int uusiYMuutos){
-        if(uusiYMuutos == -1 || uusiYMuutos==1){
-            this.yMuutos=uusiYMuutos;
-        }
+    public void setYMuutos(double uusiYMuutos){
+        this.yMuutos=uusiYMuutos;
     }
-    public void setXMuutos(int uusiXMuutos){
-        if(uusiXMuutos == -1 || uusiXMuutos==1){
-            this.xMuutos=uusiXMuutos;
-        }
+    public void setXMuutos(double uusiXMuutos){
+        this.xMuutos=uusiXMuutos;
     }
-    public int getYMuutos(){
+    public double getYMuutos(){
         return yMuutos;
     }
-    public int getXMuutos(){
+    public double getXMuutos(){
         return xMuutos;
     }
     

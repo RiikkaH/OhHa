@@ -32,7 +32,7 @@ public class PeliTest {
     @Test
     public void palloOsuuYlapalkkiin(){
         peli.getPallo().setYMuutos(-1);
-        peli.getPallo().setY(17);
+        peli.getPallo().setY(12);
         peli.getPallo().liiku();
         peli.getPallo().liiku();
         assertEquals(true,peli.palloOsuuYlapalkkiin());
@@ -47,7 +47,7 @@ public class PeliTest {
     }
     @Test
     public void palloOsuuVasempaanPalkkiin(){
-        peli.getPallo().setX(26);
+        peli.getPallo().setX(21);
         peli.getPallo().setY(205);
         peli.getPallo().setXMuutos(-1);
         peli.getPallo().liiku();
@@ -55,7 +55,7 @@ public class PeliTest {
     }
     @Test
     public void palloOsuuOikeaanPalkkiin(){
-        peli.getPallo().setX(464);
+        peli.getPallo().setX(459);
         peli.getPallo().setY(205);
         peli.getPallo().liiku();
         assertEquals(true, peli.palloOsuuOikeaanPalkkiin());
