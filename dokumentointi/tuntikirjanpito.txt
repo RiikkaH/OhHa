@@ -11,3 +11,4 @@ Tuntikirjanpito:
 11.11 pari testiä 15 min
 13.11 luokkakaavio, ½ h
 14.11 koodailua 1-1½ h
+18.11 koodailua 2 h (vihdoinkin selvisi miten fillOval käyttää pallon koordinaatteja..)
