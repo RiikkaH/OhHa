@@ -5,6 +5,7 @@ package pong.logiikka;
 /**
  *
  * @author Huusari Riikka
+ * Perii Pelin. Luo pelin, jossa on erikositehosteita
  */
 public class Erikoispeli extends Peli implements Runnable{
     

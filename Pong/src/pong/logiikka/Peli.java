@@ -12,6 +12,7 @@ import pong.kayttoliittyma.Paivitettava;
 /**
  *
  * @author Huusari Riikka
+ * Täällä on kaikki työkalut Pongin pelaamiseen
  */
 public class Peli implements Runnable{
     public Pallo pallo;
@@ -86,7 +87,7 @@ public class Peli implements Runnable{
     }
     
     public void palloOsuuPalkinAlareunaan(Pallo p, Palkki k){
-        if(p.getY()==k.getY()+40){
+        if(p.getY()==k.getY()+40 & pallo.getYMuutos()<0){
             if(p.getX()<k.getX()+10 & p.getX() > k.getX()-10){
                 if(k.getNopeus()>0){
                     p.setYMuutos(p.getYMuutos()+1);
@@ -97,7 +98,7 @@ public class Peli implements Runnable{
     }
     
     public void palloOsuuPalkinYlareunaan(Pallo p, Palkki k){
-        if(p.getY()-10==k.getY()){
+        if(p.getY()-10==k.getY() & pallo.getYMuutos()>0){
             if(p.getX()<k.getX()+10 & p.getX() > k.getX()-10){
                 if(k.getNopeus()<0){
                     p.setYMuutos(p.getYMuutos()-1);

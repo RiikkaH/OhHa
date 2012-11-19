@@ -7,6 +7,7 @@ package pong.kappaleet;
 /**
  *
  * @author Huusari Riikka
+ * Palkilla on koordinaatit ja nopeus
  */
 public class Palkki {
     private int x;

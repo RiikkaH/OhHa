@@ -7,6 +7,7 @@ package pong.logiikka;
 /**
  *
  * @author Huusari Riikka
+ * Perii Pelin, luo yksinpelin
  */
 public class Yksinpeli extends Peli implements Runnable{
  
@@ -16,12 +17,14 @@ public class Yksinpeli extends Peli implements Runnable{
     }
     
     public void muutaTietokoneenPalkinNopeutta(){
-        if(pallo.getY()<palkki1.getY()){
-            palkki1.setNopeus(-2);
-        }else if(pallo.getY()> palkki1.getY()+40){
-            palkki1.setNopeus(2);
-        }else{
-            palkki1.setNopeus(0);
+        if(pallo.getXMuutos()<0){
+            if(pallo.getY()<palkki1.getY()){
+                palkki1.setNopeus(-2);
+            }else if(pallo.getY()> palkki1.getY()+40){
+                palkki1.setNopeus(2);
+            }else{
+                palkki1.setNopeus(0);
+        }
         }
     }
     

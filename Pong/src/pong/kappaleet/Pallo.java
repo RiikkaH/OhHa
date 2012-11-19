@@ -7,6 +7,7 @@ package pong.kappaleet;
 /**
  *
  * @author Huusari Riikka
+ * Pallolla on koordinaatit ja nopeudet
  */
 public class Pallo {
     private int x;
@@ -18,7 +19,7 @@ public class Pallo {
         this.x = 250;
         this.y=250;
         this.xMuutos=1.25;
-        this.yMuutos=1.25;
+        this.yMuutos=1.2;
 
 
         //x ja y koordinaatit
@@ -27,10 +28,8 @@ public class Pallo {
     public void liiku(){
         if(y+yMuutos <10){
             y=10;
-            kaannaY();
         }else if(y+yMuutos > 447){
             y=447;
-            kaannaY();
         }else{
             x += xMuutos;
             y += yMuutos;

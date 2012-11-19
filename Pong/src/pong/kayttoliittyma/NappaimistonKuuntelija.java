@@ -17,6 +17,7 @@ import pong.logiikka.Peli;
 /**
  *
  * @author Huusari Riikka
+ * Reagoi näppäinten painalluksiin
  */
 public class NappaimistonKuuntelija implements KeyListener{
     private Palkki palkki1;

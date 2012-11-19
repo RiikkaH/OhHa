@@ -3,7 +3,11 @@ package pong.logiikka;
 
 
 
-
+/**
+ *
+ * @author Huusari Riikka
+ * Perii Pelin,  luo kaksinpelin
+ */
 public class Kaksinpeli extends Peli implements Runnable{
     
     

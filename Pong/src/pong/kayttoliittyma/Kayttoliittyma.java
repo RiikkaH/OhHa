@@ -10,8 +10,11 @@ import java.awt.Dimension;
 import java.awt.GridLayout;
 import javax.swing.*;
 
-
-
+/**
+ *
+ * @author Huusari Riikka
+ * Alun käyttöliittymä, luodaan valikko
+ */
 public class Kayttoliittyma implements Runnable{
     private JFrame frame;
     

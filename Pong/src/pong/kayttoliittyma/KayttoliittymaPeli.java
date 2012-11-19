@@ -14,6 +14,7 @@ import pong.logiikka.Yksinpeli;
 /**
  *
  * @author Huusari Riikka
+ * Pelin käyttöliittymä
  */
 public class KayttoliittymaPeli implements Runnable{
     private JFrame frame;

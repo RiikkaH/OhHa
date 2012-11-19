@@ -8,7 +8,11 @@ import pong.logiikka.Erikoispeli;
 import pong.logiikka.Kaksinpeli;
 import pong.logiikka.Yksinpeli;
 
-
+/**
+ *
+ * @author Huusari Riikka
+ * Reagoi napin painallukseen
+ */
 public class NapinKuuntelija implements ActionListener{
     private KayttoliittymaPeli kliittyma;
     private JFrame frame;

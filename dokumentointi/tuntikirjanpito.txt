@@ -1,4 +1,4 @@
-Tuntikirjanpito:
+﻿Tuntikirjanpito:
 
 29.10; aiheen valinta, githupin asennus ja suunnitelman teko, noin tunti
 31.10; suunnittelua, noin tunti
@@ -12,3 +12,4 @@ Tuntikirjanpito:
 13.11 luokkakaavio, ½ h
 14.11 koodailua 1-1½ h
 18.11 koodailua 2 h (vihdoinkin selvisi miten fillOval käyttää pallon koordinaatteja..)
+19.11 koodia tiiviimmäksi, sekvenssikaavioita ym. dokumentointia 2 h
