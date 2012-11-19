@@ -9,7 +9,7 @@ import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.GridLayout;
 import javax.swing.*;
-import pong.logiikka.Yksinpeli;
+
 
 
 public class Kayttoliittyma implements Runnable{
@@ -39,12 +39,9 @@ public class Kayttoliittyma implements Runnable{
         JButton yksinpeli = new JButton("Yksinpeli");
         JButton kaksinpeli = new JButton("Kaksinpeli");
         JButton erikoispeli = new JButton("Erikoispeli");
-        Napin1Kuuntelija kuuntelija1 = new Napin1Kuuntelija(frame);
-        Napin2Kuuntelija kuuntelija2 = new Napin2Kuuntelija(frame);
-        Napin3Kuuntelija kuuntelija3 = new Napin3Kuuntelija(frame);
-        yksinpeli.addActionListener(kuuntelija1);
-        kaksinpeli.addActionListener(kuuntelija2);
-        erikoispeli.addActionListener(kuuntelija3);
+        yksinpeli.addActionListener(new NapinKuuntelija(frame,1));
+        kaksinpeli.addActionListener(new NapinKuuntelija(frame,2));
+        erikoispeli.addActionListener(new NapinKuuntelija(frame,3));
         panel.add(yksinpeli);
         panel.add(kaksinpeli);
         panel.add(erikoispeli);

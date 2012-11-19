@@ -40,27 +40,27 @@ public class PalloTest {
         assertEquals(pallo.getX(),252);
         assertEquals(pallo.getY(),252);
     }
-    //@Test
+    @Test
     public void palloKaantyyXnSuhteen(){
         pallo.setXMuutos(1);
         pallo.kaannaX();
-        assertEquals(pallo.getXMuutos(),-1);
+        assertEquals(pallo.getXMuutos(),-1,0.001);
     }
-    //@Test
+    @Test
     public void palloKaantyyYnSuhteen(){
         pallo.setYMuutos(1);
         pallo.kaannaY();
-        assertEquals(pallo.getYMuutos(),-1);
+        assertEquals(pallo.getYMuutos(),-1,0.001);
     }
-    //@Test
+    @Test
     public void palloKaantyyXnJaYnSuhteen(){
         pallo.setXMuutos(1);
         pallo.setYMuutos(1);
         pallo.kaannaX();
         pallo.kaannaY();
         pallo.kaannaX();
-        assertEquals(pallo.getYMuutos(),-1);
-        assertEquals(pallo.getXMuutos(),1);
+        assertEquals(pallo.getYMuutos(),-1,0.001);
+        assertEquals(pallo.getXMuutos(),1,0.001);
     }
     @Test
     public void palloKaantyyjaLiikkuu(){

@@ -62,78 +62,68 @@ public class Peli implements Runnable{
     public void setPaivitettava(Paivitettava paivitettava) {
         this.paivitettava = paivitettava;
     }
-    public boolean palloOsuuYlapalkkiin(){
-        if(pallo.getY()<= 10){
-            return true;
+    public void palloOsuuYlapalkkiin(Pallo p){
+        if(p.getY()<= 10){
+            p.kaannaY();
         }
-        return false;
     }
-    public boolean palloOsuuAlapalkkiin(){
-        if(pallo.getY()>=447){
-            return true;
+    public void palloOsuuAlapalkkiin(Pallo p){
+        if(p.getY()>=447){
+            p.kaannaY();
         }
-        return false;
     }
-    public boolean palloOsuuVasempaanPalkkiin(){
-        if(pallo.getY()+10>palkki1.getY() & pallo.getY() < palkki1.getY()+40){
-            if(pallo.getX()-palkki1.getX()==10){
-                return true;
+    public void palloOsuuPalkkiin(Pallo p, Palkki k){
+        if(p.getY()+10>k.getY() & p.getY() < k.getY()+40){
+            if(Math.abs(p.getX()-k.getX())==10){
+                if(k.getNopeus()>0){
+                    p.setYMuutos(p.getYMuutos()+1);
+                }else if(k.getNopeus()<0){
+                    p.setYMuutos(p.getYMuutos()-1);
+                } 
+                p.kaannaX();
             }
         }
-        return false;
-    }
-    public boolean palloOsuuOikeaanPalkkiin(){
-        if(pallo.getY()+10>palkki2.getY() & pallo.getY() < palkki2.getY()+40){
-            if(palkki2.getX()-pallo.getX()==10){
-                return true;
-            }
-        }
-        return false;
-    }
-    public boolean palloOsuuVasemmanPalkinAlareunaan(){
-        if(pallo.getY()==palkki1.getY()+40){
-            if(pallo.getX()<palkki1.getX()+10 & pallo.getX() > palkki1.getX()-10){
-                return true;
-            }
-        }
-        return false;
-    }
-    public boolean palloOsuuOikeanPalkinAlareunaan(){
-        if(pallo.getY()==palkki2.getY()+40){
-            if(pallo.getX()<palkki2.getX()+10 & pallo.getX() > palkki2.getX()-10){
-                return true;
-            }
-        }
-        return false;
-    }
-    public boolean palloOsuuVasemmanPalkinYlareunaan(){
-        if(pallo.getY()-10==palkki1.getY()){
-            if(pallo.getX()<palkki1.getX()+10 & pallo.getX() > palkki1.getX()-10){
-                return true;
-            }
-        }
-        return false;
-    }
-    public boolean palloOsuuOikeanPalkinYlareunaan(){
-        if(pallo.getY()-10==palkki2.getY()){
-            if(pallo.getX()<palkki2.getX()+10 & pallo.getX() > palkki2.getX()-10){
-                return true;
-            }
-        }
-        return false;
     }
     
-    public boolean palloMeneeVasemmanReunanYli(){
-        if(pallo.getX()<=-5 ){
-            return true;
+    public void palloOsuuPalkinAlareunaan(Pallo p, Palkki k){
+        if(p.getY()==k.getY()+40){
+            if(p.getX()<k.getX()+10 & p.getX() > k.getX()-10){
+                if(k.getNopeus()>0){
+                    p.setYMuutos(p.getYMuutos()+1);
+                }
+                p.kaannaY();
+            }
         }
-       return false;
     }
-    public boolean palloMeneeOikeanReunanYli(){
-        if(pallo.getX() >= 505){
-            return true;
+    
+    public void palloOsuuPalkinYlareunaan(Pallo p, Palkki k){
+        if(p.getY()-10==k.getY()){
+            if(p.getX()<k.getX()+10 & p.getX() > k.getX()-10){
+                if(k.getNopeus()<0){
+                    p.setYMuutos(p.getYMuutos()-1);
+                }
+                p.kaannaY();
+            }
         }
-        return false;
+    }
+    
+    public void palloMeneeVasemmanReunanYli(Pallo p){
+        if(p.getX()<=-5 ){
+            lisaaTilasto2eenYksi();
+            p.setX(250);
+            p.setY(250);
+            p.setXMuutos(1);
+            p.setYMuutos(1);
+        }
+    }
+    public void palloMeneeOikeanReunanYli(Pallo p){
+        if(p.getX() >= 505){
+            lisaaTilasto1eenYksi();
+            p.setX(250);
+            p.setY(250);
+            p.setXMuutos(-1);
+            p.setYMuutos(1);
+        }
     }
 
     @Override

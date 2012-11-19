@@ -27,8 +27,10 @@ public class Pallo {
     public void liiku(){
         if(y+yMuutos <10){
             y=10;
+            kaannaY();
         }else if(y+yMuutos > 447){
             y=447;
+            kaannaY();
         }else{
             x += xMuutos;
             y += yMuutos;

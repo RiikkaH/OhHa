@@ -35,7 +35,8 @@ public class PeliTest {
         peli.getPallo().setY(12);
         peli.getPallo().liiku();
         peli.getPallo().liiku();
-        assertEquals(true,peli.palloOsuuYlapalkkiin());
+        peli.palloOsuuYlapalkkiin(peli.getPallo());
+        assertEquals(1,peli.getPallo().getYMuutos(),0.001);
     }
     @Test
     public void palloOsuuAlapalkkiin(){
@@ -43,7 +44,8 @@ public class PeliTest {
         peli.getPallo().setY(448);
         peli.getPallo().liiku();
         peli.getPallo().liiku();
-        assertEquals(true, peli.palloOsuuAlapalkkiin());
+        peli.palloOsuuAlapalkkiin(peli.getPallo());
+        assertEquals(-1,peli.getPallo().getYMuutos(), 0.001);
     }
     @Test
     public void palloOsuuVasempaanPalkkiin(){
@@ -51,33 +53,40 @@ public class PeliTest {
         peli.getPallo().setY(205);
         peli.getPallo().setXMuutos(-1);
         peli.getPallo().liiku();
-        assertEquals(true, peli.palloOsuuVasempaanPalkkiin());
+        peli.palloOsuuPalkkiin(peli.getPallo(), peli.getPalkki1());
+        assertEquals(1,peli.getPallo().getXMuutos(), 0.001);
     }
     @Test
     public void palloOsuuOikeaanPalkkiin(){
         peli.getPallo().setX(459);
         peli.getPallo().setY(205);
+        peli.getPallo().setXMuutos(1);
         peli.getPallo().liiku();
-        assertEquals(true, peli.palloOsuuOikeaanPalkkiin());
+        peli.palloOsuuPalkkiin(peli.getPallo(), peli.getPalkki2());
+        assertEquals(-1,peli.getPallo().getXMuutos(), 0.001);
     }
     @Test 
     public void palloMeneeVasemmanReunanYli(){
         peli.getPallo().setX(-5);
-        assertEquals(true, peli.palloMeneeVasemmanReunanYli());
+        peli.palloMeneeVasemmanReunanYli(peli.getPallo());
+        assertEquals(1,peli.getTilasto2());
     }
     @Test 
     public void palloMeneeOikeanReunanYli(){
         peli.getPallo().setX(505);
-        assertEquals(true, peli.palloMeneeOikeanReunanYli());
+        peli.palloMeneeOikeanReunanYli(peli.getPallo());
+        assertEquals(1,peli.getTilasto1());
     }
     @Test
     public void palloOnReilustiOhiVasemmanReunan(){
         peli.getPallo().setX(-10);
-        assertEquals(true, peli.palloMeneeVasemmanReunanYli());
+        peli.palloMeneeVasemmanReunanYli(peli.getPallo());
+        assertEquals(1,peli.getTilasto2());
     }
     @Test
     public void palloOnReilustiOhiOikeanReunan(){
         peli.getPallo().setX(550);
-        assertEquals(true, peli.palloMeneeOikeanReunanYli());
+        peli.palloMeneeOikeanReunanYli(peli.getPallo());
+        assertEquals(1,peli.getTilasto1());
     }
 }

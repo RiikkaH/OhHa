@@ -1,20 +1,26 @@
-
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package pong.kayttoliittyma;
 
 import java.awt.Container;
 import java.awt.Dimension;
 import javax.swing.JFrame;
 import javax.swing.WindowConstants;
-import pong.logiikka.Kaksinpeli;
 import pong.logiikka.Peli;
+import pong.logiikka.Yksinpeli;
 
-
-public class KayttoliittymaKaksinpeli implements Runnable{
+/**
+ *
+ * @author Huusari Riikka
+ */
+public class KayttoliittymaPeli implements Runnable{
     private JFrame frame;
     private Peli peli;
     private Piirtoalusta alusta;
-    public KayttoliittymaKaksinpeli(){
-        peli = new Kaksinpeli();
+    public KayttoliittymaPeli(Peli peli){
+        this.peli = peli;
     }
     @Override
     public void run() {
@@ -28,7 +34,7 @@ public class KayttoliittymaKaksinpeli implements Runnable{
     }
     private void luoKomponentit(Container container){
         alusta = new Piirtoalusta(peli);
-        peli.setPaivitettava(alusta);
+        peli.setPaivitettava(alusta); 
         container.add( alusta);
         frame.addKeyListener(new NappaimistonKuuntelija(peli,alusta));
     }
@@ -39,6 +45,6 @@ public class KayttoliittymaKaksinpeli implements Runnable{
         return frame;
     }
     public Peli getPeli(){
-        return peli;
+        return this.peli;
     }
 }
