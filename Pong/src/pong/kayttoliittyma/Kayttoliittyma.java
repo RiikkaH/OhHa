@@ -5,6 +5,7 @@
 package pong.kayttoliittyma;
 
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.GridLayout;
@@ -40,14 +41,20 @@ public class Kayttoliittyma implements Runnable{
     private JPanel luoValikko() {
         JPanel panel = new JPanel(new GridLayout(3, 1));
         JButton yksinpeli = new JButton("Yksinpeli");
+        yksinpeli.setBackground(Color.GRAY);
+        yksinpeli.setForeground(Color.CYAN);
         JButton kaksinpeli = new JButton("Kaksinpeli");
-        JButton erikoispeli = new JButton("Erikoispeli");
+        kaksinpeli.setBackground(Color.GRAY);
+        kaksinpeli.setForeground(Color.CYAN);
+        JButton asetukset = new JButton("Asetukset");
+        asetukset.setBackground(Color.GRAY);
+        asetukset.setForeground(Color.CYAN);
         yksinpeli.addActionListener(new NapinKuuntelija(frame,1));
         kaksinpeli.addActionListener(new NapinKuuntelija(frame,2));
-        erikoispeli.addActionListener(new NapinKuuntelija(frame,3));
+        asetukset.addActionListener(new NapinKuuntelijaAsetuksille(frame));
         panel.add(yksinpeli);
         panel.add(kaksinpeli);
-        panel.add(erikoispeli);
+        panel.add(asetukset);
         return panel;
     }
 

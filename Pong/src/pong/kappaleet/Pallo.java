@@ -18,7 +18,7 @@ public class Pallo {
     public Pallo(){
         this.x = 250;
         this.y=250;
-        this.xMuutos=1.25;
+        this.xMuutos=1.3;
         this.yMuutos=1.2;
 
 

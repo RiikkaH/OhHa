@@ -4,7 +4,6 @@ package pong.kayttoliittyma;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JFrame;
-import pong.logiikka.Erikoispeli;
 import pong.logiikka.Kaksinpeli;
 import pong.logiikka.Yksinpeli;
 
@@ -23,9 +22,6 @@ public class NapinKuuntelija implements ActionListener{
         }else if(i==2){
             Kaksinpeli kPeli = new Kaksinpeli();
             this.kliittyma=new KayttoliittymaPeli(kPeli);
-        }else if(i==3){
-            Erikoispeli ePeli = new Erikoispeli();
-            this.kliittyma = new KayttoliittymaPeli(ePeli);
         }
         this.frame=frame;
     }
