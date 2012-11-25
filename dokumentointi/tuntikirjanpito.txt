@@ -13,3 +13,5 @@
 14.11 koodailua 1-1½ h
 18.11 koodailua 2 h (vihdoinkin selvisi miten fillOval käyttää pallon koordinaatteja..)
 19.11 koodia tiiviimmäksi, sekvenssikaavioita ym. dokumentointia 2 h
+24.11 koodailua(mm.asetusjutut) 2h
+25.11 testejä ½h
