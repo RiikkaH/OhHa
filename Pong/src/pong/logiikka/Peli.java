@@ -23,6 +23,7 @@ public class Peli implements Runnable{
     public int tilasto2;
     public Pallo hamaysPallo1;
     public Pallo hamaysPallo2;
+    public boolean jatkuu;
 
     public Peli(){
         pallo = new Pallo();
@@ -32,6 +33,10 @@ public class Peli implements Runnable{
         tilasto2=0;
         this.hamaysPallo1= null;
         this.hamaysPallo2 = null;
+        jatkuu = true;
+    }
+    public boolean getJatkuu(){
+        return jatkuu;
     }
     public Pallo getHamaysPallo1(){
         return hamaysPallo1;
@@ -98,7 +103,7 @@ public class Peli implements Runnable{
     }
     
     public void palloOsuuPalkinYlareunaan(Pallo p, Palkki k){
-        if(p.getY()-10==k.getY() & pallo.getYMuutos()>0){
+        if(p.getY()+10==k.getY() & pallo.getYMuutos()>0){
             if(p.getX()<k.getX()+10 & p.getX() > k.getX()-10){
                 if(k.getNopeus()<0){
                     p.setYMuutos(p.getYMuutos()-1);

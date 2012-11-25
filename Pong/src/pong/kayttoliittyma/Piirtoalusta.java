@@ -22,12 +22,21 @@ public class Piirtoalusta extends JPanel implements Paivitettava{
     private Pallo pallo;
     private Palkki palkki1;
     private Palkki palkki2;
+    private Color pallonVari;
+    private Color vPalkinVari;
+    private Color oPalkinVari;
+    
     public Piirtoalusta(Peli peli){
         this.peli =peli;
         super.setBackground(Color.GRAY);
-        this.pallo=peli.getPallo();
-        this.palkki1=peli.getPalkki1();
-        this.palkki2=peli.getPalkki2();
+        if(peli != null){
+            this.pallo=peli.getPallo();
+            this.palkki1=peli.getPalkki1();
+            this.palkki2=peli.getPalkki2();
+        }
+        this.pallonVari= Color.CYAN;
+        this.vPalkinVari=Color.CYAN;
+        this.oPalkinVari=Color.CYAN;
     }
     @Override
     protected void paintComponent(Graphics graphics) {
@@ -35,16 +44,42 @@ public class Piirtoalusta extends JPanel implements Paivitettava{
         graphics.setColor(Color.CYAN);
         graphics.drawString(""+ peli.getTilasto1(), 10, 25);
         graphics.drawString(""+ peli.getTilasto2(), 470, 25);
+        graphics.setColor(vPalkinVari);
         graphics.fillRect(palkki1.getX(), palkki1.getY(), 10, 40);
+        graphics.setColor(oPalkinVari);
         graphics.fillRect(palkki2.getX(), palkki2.getY(), 10, 40);
+        graphics.setColor(pallonVari); 
         graphics.fillRect(pallo.getX(), pallo.getY(), 10, 10);
         graphics.setColor(Color.DARK_GRAY);
         graphics.fillRect(0, 0, 500, 10);
         graphics.fillRect(0, 457 , 500, 10);
+        if(peli.getJatkuu()== false){
+            graphics.setColor(Color.CYAN);
+            if(peli.getTilasto1()>peli.getTilasto2()){
+                graphics.drawString(" :)  Game Over!  :( ", 200, 200);
+            }else{
+                graphics.drawString(" :(  Game Over!  :) ", 200, 200);
+            }
+        }
     }
 
     @Override
     public void paivita() {
         repaint();
+    }
+    public void setPeli(Peli p){
+        peli = p;
+        this.pallo=peli.getPallo();
+        this.palkki1=peli.getPalkki1();
+        this.palkki2=peli.getPalkki2();
+    }
+    public void setPallonVari(Color c){
+        pallonVari=c;
+    }
+    public void setOPalkinVari(Color c){
+        oPalkinVari=c;
+    }
+    public void setVPalkinVari(Color c){
+        vPalkinVari=c;
     }
 }

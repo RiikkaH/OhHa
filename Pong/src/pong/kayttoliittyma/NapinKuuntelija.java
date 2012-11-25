@@ -5,6 +5,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JFrame;
 import pong.logiikka.Kaksinpeli;
+import pong.logiikka.Peli;
 import pong.logiikka.Yksinpeli;
 
 /**
@@ -15,22 +16,26 @@ import pong.logiikka.Yksinpeli;
 public class NapinKuuntelija implements ActionListener{
     private KayttoliittymaPeli kliittyma;
     private JFrame frame;
-    public NapinKuuntelija(JFrame frame, int i){
+    private Piirtoalusta alusta;
+    public NapinKuuntelija(JFrame frame, int i, Piirtoalusta alusta){
+        this.alusta = alusta;
         if(i==1){
-            Yksinpeli yPeli = new Yksinpeli();
-            this.kliittyma = new KayttoliittymaPeli(yPeli);
+            Peli yPeli = new Yksinpeli();
+            this.kliittyma = new KayttoliittymaPeli(yPeli,alusta);
+            alusta.setPeli(yPeli);
         }else if(i==2){
-            Kaksinpeli kPeli = new Kaksinpeli();
-            this.kliittyma=new KayttoliittymaPeli(kPeli);
+            Peli kPeli = new Kaksinpeli();
+            this.kliittyma=new KayttoliittymaPeli(kPeli, alusta);
+            alusta.setPeli(kPeli);
         }
         this.frame=frame;
     }
     
     @Override
     public void actionPerformed(ActionEvent e) {
-        kliittyma.getPeli().setPaivitettava(kliittyma.getPaivitettava());
+        kliittyma.getPeli().setPaivitettava(alusta);
         kliittyma.run();
-        frame.dispose();
+        frame.setVisible(false);
     }
     
 }

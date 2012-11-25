@@ -55,12 +55,51 @@ public class PeliTest {
         peli.getPallo().liiku();
         peli.palloOsuuPalkkiin(peli.getPallo(), peli.getPalkki1());
         assertEquals(1,peli.getPallo().getXMuutos(), 0.001);
+    }@Test
+    public void palloOsuuVasempaanPalkkiinSenYlalaidassa(){
+        peli.getPallo().setX(21);
+        peli.getPallo().setY(200);
+        peli.getPallo().setXMuutos(-1);
+        peli.getPallo().setYMuutos(0);
+        peli.getPallo().liiku();
+        peli.palloOsuuPalkkiin(peli.getPallo(), peli.getPalkki1());
+        assertEquals(1,peli.getPallo().getXMuutos(), 0.001);
+    }
+    @Test
+    public void palloOsuuVasempaanPalkkiinSenAlalaidassa(){
+        peli.getPallo().setX(21);
+        peli.getPallo().setY(240);
+        peli.getPallo().setXMuutos(-1);
+        peli.getPallo().setYMuutos(0);
+        peli.getPallo().liiku();
+        peli.palloOsuuPalkkiin(peli.getPallo(), peli.getPalkki1());
+        assertEquals(1,peli.getPallo().getXMuutos(), 0.001);
     }
     @Test
     public void palloOsuuOikeaanPalkkiin(){
         peli.getPallo().setX(459);
         peli.getPallo().setY(205);
         peli.getPallo().setXMuutos(1);
+        peli.getPallo().liiku();
+        peli.palloOsuuPalkkiin(peli.getPallo(), peli.getPalkki2());
+        assertEquals(-1,peli.getPallo().getXMuutos(), 0.001);
+    }
+    @Test
+    public void palloOsuuOikeaanPalkkiinSenYlalaidassa(){
+        peli.getPallo().setX(459);
+        peli.getPallo().setY(200);
+        peli.getPallo().setXMuutos(1);
+        peli.getPallo().setYMuutos(0);
+        peli.getPallo().liiku();
+        peli.palloOsuuPalkkiin(peli.getPallo(), peli.getPalkki2());
+        assertEquals(-1,peli.getPallo().getXMuutos(), 0.001);
+    }
+    @Test
+    public void palloOsuuOikeaanPalkkiinSenAlalaidassa(){
+        peli.getPallo().setX(459);
+        peli.getPallo().setY(240);
+        peli.getPallo().setXMuutos(1);
+        peli.getPallo().setYMuutos(0);
         peli.getPallo().liiku();
         peli.palloOsuuPalkkiin(peli.getPallo(), peli.getPalkki2());
         assertEquals(-1,peli.getPallo().getXMuutos(), 0.001);
@@ -88,5 +127,69 @@ public class PeliTest {
         peli.getPallo().setX(550);
         peli.palloMeneeOikeanReunanYli(peli.getPallo());
         assertEquals(1,peli.getTilasto1());
+    }
+    @Test
+    public void palloOsuuVasemmanPalkinAlareunaanVasemmallaRajalla(){
+        peli.getPallo().setX(1);
+        peli.getPallo().setY(240);
+        peli.getPallo().setYMuutos(-1);
+        peli.palloOsuuPalkinAlareunaan(peli.getPallo(), peli.getPalkki1());
+        assertEquals(1,peli.getPallo().getYMuutos(),0.001);
+    }
+    @Test
+    public void palloOsuuOikeanPalkinAlareunaanVasemmallaRajalla(){
+        peli.getPallo().setX(461);
+        peli.getPallo().setY(240);
+        peli.getPallo().setYMuutos(-1);
+        peli.palloOsuuPalkinAlareunaan(peli.getPallo(), peli.getPalkki2());
+        assertEquals(1,peli.getPallo().getYMuutos(),0.001);
+    }
+    @Test
+    public void palloOsuuVasemmanPalkinAlareunaanOikeallaRajalla(){
+        peli.getPallo().setX(19);
+        peli.getPallo().setY(240);
+        peli.getPallo().setYMuutos(-1);
+        peli.palloOsuuPalkinAlareunaan(peli.getPallo(), peli.getPalkki1());
+        assertEquals(1,peli.getPallo().getYMuutos(),0.001);
+    }
+    @Test
+    public void palloOsuuOikeanPalkinAlareunaanOikelaalaRajalla(){
+        peli.getPallo().setX(479);
+        peli.getPallo().setY(240);
+        peli.getPallo().setYMuutos(-1);
+        peli.palloOsuuPalkinAlareunaan(peli.getPallo(), peli.getPalkki2());
+        assertEquals(1,peli.getPallo().getYMuutos(),0.001);
+    }
+    @Test
+    public void palloOsuuVasemmanPalkinYlareunaanVasemmallaRajalla(){
+        peli.getPallo().setX(1);
+        peli.getPallo().setY(190);
+        peli.getPallo().setYMuutos(1);
+        peli.palloOsuuPalkinYlareunaan(peli.getPallo(), peli.getPalkki1());
+        assertEquals(-1,peli.getPallo().getYMuutos(),0.001);
+    }
+    @Test
+    public void palloOsuuOikeanPalkinYlareunaanVasemmallaRajalla(){
+        peli.getPallo().setX(461);
+        peli.getPallo().setY(190);
+        peli.getPallo().setYMuutos(1);
+        peli.palloOsuuPalkinYlareunaan(peli.getPallo(), peli.getPalkki2());
+        assertEquals(-1,peli.getPallo().getYMuutos(),0.001);
+    }
+    @Test
+    public void palloOsuuVaemmanPalkinYlareunaanOikeallaRajalla(){
+        peli.getPallo().setX(19);
+        peli.getPallo().setY(190);
+        peli.getPallo().setYMuutos(1);
+        peli.palloOsuuPalkinYlareunaan(peli.getPallo(), peli.getPalkki1());
+        assertEquals(-1,peli.getPallo().getYMuutos(),0.001);
+    }
+    @Test
+    public void palloOsuuOikeanPalkinYlareunaanOikeallaRajalla(){
+        peli.getPallo().setX(479);
+        peli.getPallo().setY(190);
+        peli.getPallo().setYMuutos(1);
+        peli.palloOsuuPalkinYlareunaan(peli.getPallo(), peli.getPalkki2());
+        assertEquals(-1,peli.getPallo().getYMuutos(),0.001);
     }
 }

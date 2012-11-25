@@ -15,13 +15,16 @@ import javax.swing.JFrame;
 public class NapinKuuntelijaAsetuksille implements ActionListener{
     private KayttoliittymaAsetukset kliittyma;
     private JFrame frame;
-    public NapinKuuntelijaAsetuksille(JFrame frame){
-        kliittyma = new KayttoliittymaAsetukset(frame);
+    private Piirtoalusta alusta;
+    public NapinKuuntelijaAsetuksille(JFrame frame, Piirtoalusta alusta){
+        kliittyma = new KayttoliittymaAsetukset(frame, alusta);
         this.frame=frame;
+        this.alusta = alusta;
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
+        kliittyma.setPiirtoalusta(alusta);
         kliittyma.run();
         frame.dispose();
     }

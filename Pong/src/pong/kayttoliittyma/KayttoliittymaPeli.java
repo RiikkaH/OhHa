@@ -20,8 +20,9 @@ public class KayttoliittymaPeli implements Runnable{
     private JFrame frame;
     private Peli peli;
     private Piirtoalusta alusta;
-    public KayttoliittymaPeli(Peli peli){
+    public KayttoliittymaPeli(Peli peli, Piirtoalusta alusta){
         this.peli = peli;
+        this.alusta = alusta;
     }
     @Override
     public void run() {
@@ -34,7 +35,6 @@ public class KayttoliittymaPeli implements Runnable{
         new Thread(peli).start();
     }
     private void luoKomponentit(Container container){
-        alusta = new Piirtoalusta(peli);
         peli.setPaivitettava(alusta); 
         container.add( alusta);
         frame.addKeyListener(new NappaimistonKuuntelija(peli,alusta));

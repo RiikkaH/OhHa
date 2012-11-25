@@ -65,5 +65,6 @@ public class Yksinpeli extends Peli implements Runnable{
                 return;
             }
         }
+        jatkuu = false;
     }
 }

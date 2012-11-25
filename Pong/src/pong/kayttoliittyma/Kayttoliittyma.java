@@ -18,9 +18,9 @@ import javax.swing.*;
  */
 public class Kayttoliittyma implements Runnable{
     private JFrame frame;
-    
+    private Piirtoalusta alusta;
     public Kayttoliittyma(){
-        
+        alusta = new Piirtoalusta(null);
     }
     @Override
     public void run(){
@@ -49,9 +49,9 @@ public class Kayttoliittyma implements Runnable{
         JButton asetukset = new JButton("Asetukset");
         asetukset.setBackground(Color.GRAY);
         asetukset.setForeground(Color.CYAN);
-        yksinpeli.addActionListener(new NapinKuuntelija(frame,1));
-        kaksinpeli.addActionListener(new NapinKuuntelija(frame,2));
-        asetukset.addActionListener(new NapinKuuntelijaAsetuksille(frame));
+        yksinpeli.addActionListener(new NapinKuuntelija(frame,1, alusta));
+        kaksinpeli.addActionListener(new NapinKuuntelija(frame,2, alusta));
+        asetukset.addActionListener(new NapinKuuntelijaAsetuksille(frame, alusta));
         panel.add(yksinpeli);
         panel.add(kaksinpeli);
         panel.add(asetukset);

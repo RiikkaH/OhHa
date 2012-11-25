@@ -37,17 +37,35 @@ public class YksinpeliTest {
     
     @Test 
     public void tietokoneLiikuttaaPalkkiaYlosKunPalloOnYlempana(){
+        peli.getPallo().setXMuutos(-1);
         peli.getPallo().setY(40);
         peli.muutaTietokoneenPalkinNopeutta();
         peli.getPalkki1().liiku();
-        assertEquals(peli.getPalkki1().getY(),198);
+        assertEquals(198,peli.getPalkki1().getY());
+    }
+    @Test
+    public void tietokoneLiikuttaaPalkkiaYlosKunPalloOnJuuriYlempana(){
+        peli.getPallo().setXMuutos(-1);
+        peli.getPallo().setY(199);
+        peli.muutaTietokoneenPalkinNopeutta();
+        peli.getPalkki1().liiku();
+        assertEquals(198,peli.getPalkki1().getY());
     }
     @Test
     public void tietokoneLiikuttaaPalkkiaAlasKunPalloOnAlempana(){
+        peli.getPallo().setXMuutos(-1);
         peli.getPallo().setY(300);
         peli.muutaTietokoneenPalkinNopeutta();
         peli.getPalkki1().liiku();
         assertEquals(peli.getPalkki1().getY(),202);
+    }
+    @Test
+    public void tietokoneLiikuttaaPalkkiaAlasKunPalloOnJuuriAlempana(){
+        peli.getPallo().setXMuutos(-1);
+        peli.getPallo().setY(241);
+        peli.muutaTietokoneenPalkinNopeutta();
+        peli.getPalkki1().liiku();
+        assertEquals(202,peli.getPalkki1().getY());
     }
     @Test
     public void tietokoneEiLiikutaPalkkiaKunPalloOnSamallaKorkeudella(){

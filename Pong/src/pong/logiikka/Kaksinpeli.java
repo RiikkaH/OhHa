@@ -50,5 +50,6 @@ public class Kaksinpeli extends Peli implements Runnable{
             }
             
         }
+        jatkuu = false;
     }
 }
