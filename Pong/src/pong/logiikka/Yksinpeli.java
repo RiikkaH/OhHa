@@ -15,7 +15,9 @@ public class Yksinpeli extends Peli implements Runnable{
     public Yksinpeli(){
         
     }
-    
+    /**
+     * Metodi huolehtii tietokoneen palkin nopeuden säätämisestä
+     */
     public void muutaTietokoneenPalkinNopeutta(){
         if(pallo.getXMuutos()<0){
             if(pallo.getY()<palkki1.getY()){
@@ -58,13 +60,15 @@ public class Yksinpeli extends Peli implements Runnable{
                 j=tilasto1;
             }
             i=j;
-            
+            if(i==10){
+                jatkuu=false;
+            }
             try{
                 Thread.sleep(5);
             }catch(InterruptedException ie){
                 return;
             }
         }
-        jatkuu = false;
+        
     }
 }

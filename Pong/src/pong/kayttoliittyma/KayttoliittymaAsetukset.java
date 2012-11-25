@@ -10,6 +10,7 @@ import javax.swing.*;
 /**
  *
  * @author Huusari Riikka
+ * Asetusikkunan käyttöliittymä
  */
 public class KayttoliittymaAsetukset implements Runnable{
     private JFrame frame;

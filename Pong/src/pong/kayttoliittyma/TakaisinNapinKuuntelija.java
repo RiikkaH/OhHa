@@ -11,6 +11,7 @@ import javax.swing.JFrame;
 /**
  *
  * @author Huusari Riikka
+ * Reagoi "takaisin" -napin painallukseen
  */
 public class TakaisinNapinKuuntelija implements ActionListener{
     private JFrame frame;

@@ -40,18 +40,23 @@ public class Kayttoliittyma implements Runnable{
     }
     private JPanel luoValikko() {
         JPanel panel = new JPanel(new GridLayout(3, 1));
+        
         JButton yksinpeli = new JButton("Yksinpeli");
         yksinpeli.setBackground(Color.GRAY);
         yksinpeli.setForeground(Color.CYAN);
+        
         JButton kaksinpeli = new JButton("Kaksinpeli");
         kaksinpeli.setBackground(Color.GRAY);
         kaksinpeli.setForeground(Color.CYAN);
+        
         JButton asetukset = new JButton("Asetukset");
         asetukset.setBackground(Color.GRAY);
         asetukset.setForeground(Color.CYAN);
+        
         yksinpeli.addActionListener(new NapinKuuntelija(frame,1, alusta));
         kaksinpeli.addActionListener(new NapinKuuntelija(frame,2, alusta));
         asetukset.addActionListener(new NapinKuuntelijaAsetuksille(frame, alusta));
+        
         panel.add(yksinpeli);
         panel.add(kaksinpeli);
         panel.add(asetukset);

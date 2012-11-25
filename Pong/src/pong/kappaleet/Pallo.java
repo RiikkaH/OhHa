@@ -7,12 +7,24 @@ package pong.kappaleet;
 /**
  *
  * @author Huusari Riikka
- * Pallolla on koordinaatit ja nopeudet
+ * Luokassa on Pongin pallon tiedot
  */
 public class Pallo {
+    /**
+     * Pallon x-koorinaatti
+     */
     private int x;
+    /**
+     * pallon y-koorinaatti
+     */
     private int y;
+    /**
+     * pallon nopeus x:n suhteen (positiivinen nopeus oikealle)
+     */
     private double xMuutos;
+    /**
+     * pallon nopeus y:n suhteen (positiivinen nopeus alas)
+     */
     private double yMuutos;
 
     public Pallo(){
@@ -21,10 +33,12 @@ public class Pallo {
         this.xMuutos=1.3;
         this.yMuutos=1.2;
 
-
-        //x ja y koordinaatit
     }
-    
+    /**
+     * Metodi huolehtii pallon liikuttamisesta, 
+     * kuitenkin huomioiden sen, ettei pallo voi
+     * liikkua liian alas tai ylös
+     */
     public void liiku(){
         if(y+yMuutos <10){
             y=10;

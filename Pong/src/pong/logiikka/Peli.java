@@ -15,14 +15,38 @@ import pong.kayttoliittyma.Paivitettava;
  * Täällä on kaikki työkalut Pongin pelaamiseen
  */
 public class Peli implements Runnable{
+    /**
+     * Pelin pallo
+     */
     public Pallo pallo;
+    /**
+     * pelin vasen palkki
+     */
     public Palkki palkki1;
+    /**
+     * pelin oikea palkki
+     */
     public Palkki palkki2;
+    /**
+     * Rajapinnan Paivitettava toteuttava olio, käytännössä
+     * Piirtoalusta
+     */
     public Paivitettava paivitettava;
+    /**
+     * Vasemmanpuoleisen pelaajan tilasto joka kertoo,
+     * kuinka monta kertaa pallo on mennyt oikean reunan
+     * yli
+     */
     public int tilasto1;
+    /**
+     * Oikeanpuoleisen pelaajan tilasto joka kertoo,
+     * kuinka monta kertaa pallo on mennyt vasemman reunan
+     * yli
+     */
     public int tilasto2;
-    public Pallo hamaysPallo1;
-    public Pallo hamaysPallo2;
+    /**
+     * Kertoo, onko peli käynnissä
+     */
     public boolean jatkuu;
 
     public Peli(){
@@ -31,18 +55,10 @@ public class Peli implements Runnable{
         palkki2 = new Palkki(470);
         tilasto1=0;
         tilasto2=0;
-        this.hamaysPallo1= null;
-        this.hamaysPallo2 = null;
         jatkuu = true;
     }
     public boolean getJatkuu(){
         return jatkuu;
-    }
-    public Pallo getHamaysPallo1(){
-        return hamaysPallo1;
-    }
-    public Pallo getHamaysPallo2(){
-        return hamaysPallo2;
     }
     public int getTilasto1(){
         return tilasto1;
@@ -68,16 +84,33 @@ public class Peli implements Runnable{
     public void setPaivitettava(Paivitettava paivitettava) {
         this.paivitettava = paivitettava;
     }
+    /**
+     * Metodi tarkastaa, osuuko pallo pelin ylälaitaan
+     * ja jos osuu, kääntää pallon suunnan
+     * @param p 
+     */
     public void palloOsuuYlapalkkiin(Pallo p){
         if(p.getY()<= 10){
             p.kaannaY();
         }
     }
+    /**
+     * Metodi tarkastaa osuuko pallo pelin alalaitaan
+     * ja jos osuu, kääntää pallon suunnan
+     * @param p Pelin pallo
+     */
     public void palloOsuuAlapalkkiin(Pallo p){
         if(p.getY()>=447){
             p.kaannaY();
         }
     }
+    /**
+     * Metodi tarkastaa osuuko pallo palkkiin ja jos 
+     * osuu, kääntää pallon suunnan ja mahdollisesti säätää
+     * nopeutta
+     * @param p Pelin pallo
+     * @param k Palkki, johon pallon osuminen halutaan tarkastaa
+     */
     public void palloOsuuPalkkiin(Pallo p, Palkki k){
         if(p.getY()+10>k.getY() & p.getY() < k.getY()+50){
             if(Math.abs(p.getX()-k.getX())==10){
@@ -90,7 +123,13 @@ public class Peli implements Runnable{
             }
         }
     }
-    
+    /**
+     * Metodi tarkastaa osuuko pallo palkin alareunaan,
+     * ja jos osuu, kääntää pallon suunnan, ja mahdollisesti 
+     * säätää pallon nopeuuta
+     * @param p Pelin pallo
+     * @param k Palkki, johon pallon osuminen tarkastetaan
+     */
     public void palloOsuuPalkinAlareunaan(Pallo p, Palkki k){
         if(p.getY()==k.getY()+40 & pallo.getYMuutos()<0){
             if(p.getX()<k.getX()+10 & p.getX() > k.getX()-10){
@@ -101,7 +140,13 @@ public class Peli implements Runnable{
             }
         }
     }
-    
+    /**
+     * Metodi tarkastaa osuuko pallo palkin yläreunaan,
+     * ja jos osuu, kääntää pallon suunnan, ja mahdollisesti 
+     * säätää pallon nopeuuta
+     * @param p Pelin pallo
+     * @param k Palkki, johon pallon osuminen tarkastetaan 
+     */
     public void palloOsuuPalkinYlareunaan(Pallo p, Palkki k){
         if(p.getY()+10==k.getY() & pallo.getYMuutos()>0){
             if(p.getX()<k.getX()+10 & p.getX() > k.getX()-10){
@@ -112,16 +157,27 @@ public class Peli implements Runnable{
             }
         }
     }
-    
+    /**
+     * Metodi tarkastaa meneekö pallo vasemman reunan yli,
+     * jolloin pallo asetetaan uudestaan keskelle ja oikean
+     * puolen pelaajan tilastoon lisätään piste
+     * @param p Pelin pallo
+     */
     public void palloMeneeVasemmanReunanYli(Pallo p){
         if(p.getX()<=-5 ){
             lisaaTilasto2eenYksi();
             p.setX(250);
             p.setY(250);
-            p.setXMuutos(1.3);
+            p.setXMuutos(1.4);
             p.setYMuutos(1.1);
         }
     }
+    /**
+     * Metodi tarkastaa meneekö pallo oikean reunan yli,
+     * jolloin pallo asetetaan uudestaan keskelle ja vasemman
+     * puolen pelaajan tilastoon lisätään piste
+     * @param p 
+     */
     public void palloMeneeOikeanReunanYli(Pallo p){
         if(p.getX() >= 505){
             lisaaTilasto1eenYksi();
@@ -131,7 +187,9 @@ public class Peli implements Runnable{
             p.setYMuutos(1.1);
         }
     }
-
+    /**
+     * Metodi huolehtii pelin etenemisestä
+     */
     @Override
     public void run() {
  

@@ -18,12 +18,33 @@ import pong.logiikka.Peli;
  * Piirretään peli
  */
 public class Piirtoalusta extends JPanel implements Paivitettava{
+    /**
+     * peli, jota piirretään
+     */
     private Peli peli;
+    /**
+     * pelin pallo
+     */
     private Pallo pallo;
+    /**
+     * pelin vasemmanpuolinen palkki
+     */
     private Palkki palkki1;
+    /**
+     * pelin oikeanpuolinen palkki
+     */
     private Palkki palkki2;
+    /**
+     * pallon väri
+     */
     private Color pallonVari;
+    /**
+     * vasemmanpuoleisen palkin väri
+     */
     private Color vPalkinVari;
+    /**
+     * oikeanpuoleisen palkin väri
+     */
     private Color oPalkinVari;
     
     public Piirtoalusta(Peli peli){
@@ -56,9 +77,9 @@ public class Piirtoalusta extends JPanel implements Paivitettava{
         if(peli.getJatkuu()== false){
             graphics.setColor(Color.CYAN);
             if(peli.getTilasto1()>peli.getTilasto2()){
-                graphics.drawString(" :)  Game Over!  :( ", 200, 200);
+                graphics.drawString(" :)  Game Over!  :( ", 210, 200);
             }else{
-                graphics.drawString(" :(  Game Over!  :) ", 200, 200);
+                graphics.drawString(" :(  Game Over!  :) ", 210, 200);
             }
         }
     }

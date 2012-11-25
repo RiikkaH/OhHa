@@ -11,6 +11,7 @@ import javax.swing.JFrame;
 /**
  *
  * @author Huusari Riikka
+ * Reagoi "asetus" -napin painamiseen
  */
 public class NapinKuuntelijaAsetuksille implements ActionListener{
     private KayttoliittymaAsetukset kliittyma;

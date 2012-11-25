@@ -7,20 +7,31 @@ package pong.kappaleet;
 /**
  *
  * @author Huusari Riikka
- * Palkilla on koordinaatit ja nopeus
+ * Luokassa on Pongin palkkien tiedot
  */
 public class Palkki {
+    /**
+     * palkin x-koordinaatti
+     */
     private int x;
+    /**
+     * palkin y-koordinaatti
+     */
     private int y;
+    /**
+     * palkin nopeus (kun nopeus on positiivinen, suunta on alas)
+     */
     private int nopeus;
     public Palkki(int x){
         this.x=x;
         this.y=200;
         this.nopeus=0;
-        //jos nopeus on positiivista, liikkuu palkki alas
-        //x ja y ovat koordinaatit, x asetetaan pelissä, y tässä
     }
-    
+    /**
+     * Metodi liikuttaa palkkia nopeuden verran ylös tai alas
+     * kuitenkin huomioiden sen, ettei palkki mene alueen ulko-
+     * puolelle
+     */
     public void liiku(){
         if(y+nopeus>=457-40){
             y=457-40;

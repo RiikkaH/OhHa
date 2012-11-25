@@ -42,7 +42,9 @@ public class Kaksinpeli extends Peli implements Runnable{
                 j=tilasto1;
             }
             i=j;
-            
+            if(i==10){
+                jatkuu=false;
+            }
             try{
                 Thread.sleep(5);
             }catch(InterruptedException ie){
@@ -50,6 +52,5 @@ public class Kaksinpeli extends Peli implements Runnable{
             }
             
         }
-        jatkuu = false;
     }
 }
