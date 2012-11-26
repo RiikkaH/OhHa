@@ -22,9 +22,9 @@ public class TakaisinNapinKuuntelija implements ActionListener{
     }
     @Override
     public void actionPerformed(ActionEvent e) {
-        frame.pack();
-        frame.setVisible(true);
-        frame2.dispose();
+        frame2.pack();
+        frame2.setVisible(true);
+        frame.dispose();
         //miksi ei toimi?
     }
     
