@@ -20,12 +20,16 @@ public class TakaisinNapinKuuntelija implements ActionListener{
         this.frame=frame;
         this.frame2=frame2;
     }
+    /**
+     * Kun "takaisin" -nappia painetaan, metodi poistaa näkyvistä
+     * asetusikkunan ja laittaa näkyviin valikkoikkunan
+     * @param e ActionEvent
+     */
     @Override
     public void actionPerformed(ActionEvent e) {
         frame2.pack();
         frame2.setVisible(true);
         frame.dispose();
-        //miksi ei toimi?
     }
     
 }

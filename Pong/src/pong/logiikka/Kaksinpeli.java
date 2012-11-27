@@ -13,7 +13,9 @@ public class Kaksinpeli extends Peli implements Runnable{
     
     public Kaksinpeli(){ 
     }
-
+    /**
+     * Metodi huolehtii pelin etenemisestä
+     */
     @Override
     public void run() {
         int i=0;

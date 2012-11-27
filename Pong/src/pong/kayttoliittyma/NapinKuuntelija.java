@@ -11,7 +11,7 @@ import pong.logiikka.Yksinpeli;
 /**
  *
  * @author Huusari Riikka
- * Reagoi napin painallukseen
+ * Reagoi pelin nappien painallukseen
  */
 public class NapinKuuntelija implements ActionListener{
     private KayttoliittymaPeli kliittyma;
@@ -30,7 +30,11 @@ public class NapinKuuntelija implements ActionListener{
         }
         this.frame=frame;
     }
-    
+    /**
+     * Metodissa on toiminnallisuus, joka suoritetaan kun
+     * nappia painetaan, eli pelin käyttöliittymä käynnistetään
+     * @param e ActionEvent
+     */
     @Override
     public void actionPerformed(ActionEvent e) {
         kliittyma.getPeli().setPaivitettava(alusta);

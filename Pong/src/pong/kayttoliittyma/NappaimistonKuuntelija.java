@@ -31,7 +31,10 @@ public class NappaimistonKuuntelija implements KeyListener{
         this.kPeli=new Kaksinpeli();
         this.component=component;
     }
-    
+    /**
+     * Metodi säätää palkkien nopeuksia kun nappeja painetaan
+     * @param e 
+     */
     @Override
     public void keyPressed(KeyEvent e){
         if (e.getKeyCode() == KeyEvent.VK_UP) {
@@ -55,7 +58,10 @@ public class NappaimistonKuuntelija implements KeyListener{
     public void keyTyped(KeyEvent ke) {
         
     }
-
+    /**
+     * Metodi säätää palkkien nopeuksia kun nappien painallus lopetetaan
+     * @param ke 
+     */
     @Override
     public void keyReleased(KeyEvent ke) {
         if (ke.getKeyCode() == KeyEvent.VK_UP) {

@@ -29,7 +29,9 @@ public class Yksinpeli extends Peli implements Runnable{
         }
         }
     }
-    
+    /**
+     * Metodi huolehtii pelin etenemisestä
+     */
     @Override
     public void run() {
         int i = 0;

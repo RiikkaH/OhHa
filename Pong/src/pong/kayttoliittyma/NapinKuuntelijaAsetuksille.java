@@ -22,7 +22,11 @@ public class NapinKuuntelijaAsetuksille implements ActionListener{
         this.frame=frame;
         this.alusta = alusta;
     }
-
+    /**
+     * Kun "asetus" -nappia painetaan, metodi avaa asetusikkunan 
+     * ja sulkee pelivalikkoikkunan
+     * @param e ActionEvent
+     */
     @Override
     public void actionPerformed(ActionEvent e) {
         kliittyma.setPiirtoalusta(alusta);

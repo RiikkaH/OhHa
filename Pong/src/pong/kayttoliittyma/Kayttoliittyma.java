@@ -14,14 +14,23 @@ import javax.swing.*;
 /**
  *
  * @author Huusari Riikka
- * Alun käyttöliittymä, luodaan valikko
+ * Alun käyttöliittymä, luodaan alkuvalikko
  */
 public class Kayttoliittyma implements Runnable{
+    /**
+     * Kayttoliittyman frame
+     */
     private JFrame frame;
+    /**
+     * pelien Piirtoalusta
+     */
     private Piirtoalusta alusta;
     public Kayttoliittyma(){
         alusta = new Piirtoalusta(null);
     }
+    /**
+     * Luo käyttöliittymän ja sen ominaisuudet
+     */
     @Override
     public void run(){
         frame =new JFrame("PONG");
@@ -32,12 +41,19 @@ public class Kayttoliittyma implements Runnable{
         frame.setVisible(true);
         
     }
-
+    /**
+     * Luo käyttöliittymän komponentit
+     * @param container 
+     */
     private void luoKomponentit(Container container) {
         
         container.add(luoValikko(), BorderLayout.CENTER);
         
     }
+    /**
+     * Luo Käyttöliittymän valikon
+     * @return JPanel 
+     */
     private JPanel luoValikko() {
         JPanel panel = new JPanel(new GridLayout(3, 1));
         

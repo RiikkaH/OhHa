@@ -59,6 +59,10 @@ public class Piirtoalusta extends JPanel implements Paivitettava{
         this.vPalkinVari=Color.CYAN;
         this.oPalkinVari=Color.CYAN;
     }
+    /**
+     * Metodissa piirretään kaikki pelin komponentit
+     * @param graphics 
+     */
     @Override
     protected void paintComponent(Graphics graphics) {
         super.paintComponent(graphics);

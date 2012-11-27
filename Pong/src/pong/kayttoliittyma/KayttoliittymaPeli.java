@@ -17,13 +17,25 @@ import pong.logiikka.Yksinpeli;
  * Pelin käyttöliittymä
  */
 public class KayttoliittymaPeli implements Runnable{
+    /**
+     * pelin käyttöliittymän frame
+     */
     private JFrame frame;
+    /**
+     * Käyttöliitymän peli
+     */
     private Peli peli;
+    /**
+     * käyttöliittymän piirtoalusta
+     */
     private Piirtoalusta alusta;
     public KayttoliittymaPeli(Peli peli, Piirtoalusta alusta){
         this.peli = peli;
         this.alusta = alusta;
     }
+    /**
+     * luo käyttöliittymän
+     */
     @Override
     public void run() {
         frame =new JFrame("PONG");
@@ -34,6 +46,10 @@ public class KayttoliittymaPeli implements Runnable{
         frame.setVisible(true);
         new Thread(peli).start();
     }
+    /**
+     * luo käyttöliittymän komponentit
+     * @param container 
+     */
     private void luoKomponentit(Container container){
         peli.setPaivitettava(alusta); 
         container.add( alusta);
