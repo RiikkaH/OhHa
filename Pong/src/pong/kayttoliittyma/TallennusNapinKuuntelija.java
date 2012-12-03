@@ -55,6 +55,7 @@ public class TallennusNapinKuuntelija implements ActionListener{
         int r=0;
         try{
             s = Integer.parseInt(kentat.get(1).getText());
+            //NumberFormatException
         }catch(Exception e){
             ohjeet.setText("Syötä kenttiin numero väliltä 0-255!");
             return;
