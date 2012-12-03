@@ -15,3 +15,4 @@
 19.11 koodia tiiviimmäksi, sekvenssikaavioita ym. dokumentointia 2 h
 24.11 koodailua(mm.asetusjutut) 2h
 25.11 testejä ja javadocia 1h
+3.12 koodailua ½h
