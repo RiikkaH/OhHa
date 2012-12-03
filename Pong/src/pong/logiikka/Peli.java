@@ -48,6 +48,10 @@ public class Peli implements Runnable{
      * Kertoo, onko peli käynnissä
      */
     public boolean jatkuu;
+    /**
+     * Tätä käytetään while-silmukassa
+     */
+    public int i;
 
     public Peli(){
         pallo = new Pallo();
@@ -56,6 +60,7 @@ public class Peli implements Runnable{
         tilasto1=0;
         tilasto2=0;
         jatkuu = true;
+        i = 0;
     }
     public boolean getJatkuu(){
         return jatkuu;
@@ -91,7 +96,9 @@ public class Peli implements Runnable{
      */
     public void palloOsuuYlapalkkiin(Pallo p){
         if(p.getY()<= 10){
-            p.kaannaY();
+            if(p.getYMuutos()<0){
+                p.kaannaY();
+            }
         }
     }
     /**
@@ -101,7 +108,9 @@ public class Peli implements Runnable{
      */
     public void palloOsuuAlapalkkiin(Pallo p){
         if(p.getY()>=447){
-            p.kaannaY();
+            if(p.getYMuutos()>0){
+                p.kaannaY();
+            }
         }
     }
     /**
@@ -193,5 +202,20 @@ public class Peli implements Runnable{
     @Override
     public void run() {
  
+    }
+    /**
+     * Metodi huolehtii siitä, että peli päättyy oikeaan aikaan
+     */
+    public void katsoJatkuukoPeli(){
+        int j = 0;
+        if(tilasto2>tilasto1){
+            j=tilasto2;
+        }else if(tilasto1>tilasto2){
+            j=tilasto1;
+        }
+        i=j;
+        if(i==10){
+            jatkuu=false;
+        }
     }
 }

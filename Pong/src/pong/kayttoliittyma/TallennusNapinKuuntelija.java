@@ -29,42 +29,7 @@ public class TallennusNapinKuuntelija implements ActionListener{
      * Kenttä, johon virheen tullessa tulee tekstiä
      */
     private JLabel ohjeet;
-    /**
-     * numero, jonka avulla määritetään väri pallolle
-     */
-    private int s;
-    /**
-     * numero, jonka avulla määritetään väri pallolle
-     */
-    private int r;
-    /**
-     * numero, jonka avulla määritetään väri pallolle
-     */
-    private int t;
-    /**
-     * numero, jonka avulla määritetään väri vasemmalle palkille
-     */
-    private int a;
-    /**
-     * numero, jonka avulla määritetään väri vasemmalle palkille
-     */
-    private int b;
-    /**
-     * numero, jonka avulla määritetään väri vasemmalle palkille
-     */
-    private int c;
-    /**
-     * numero, jonka avulla määritetään väri oikealle palkille
-     */
-    private int d;
-    /**
-     * numero, jonka avulla määritetään väri oikealle palkille
-     */
-    private int e;
-    /**
-     * numero, jonka avulla määritetään väri oikealle palkille
-     */
-    private int f;
+
     public TallennusNapinKuuntelija(ArrayList<TextField> kentat, Piirtoalusta alusta, JLabel ohjeet){
         this.kentat=kentat;
         this.alusta=alusta;
@@ -85,6 +50,9 @@ public class TallennusNapinKuuntelija implements ActionListener{
      * kenttiin syötetään
      */
     public void saadaPallonVari(){
+        int s=0;
+        int t=0;
+        int r=0;
         try{
             s = Integer.parseInt(kentat.get(1).getText());
         }catch(Exception e){
@@ -111,6 +79,9 @@ public class TallennusNapinKuuntelija implements ActionListener{
      * kenttiin syötetään
      */
     public void saadaVasemmanPalkinVari(){
+        int a= 0;
+        int b=0;
+        int c=0;
         try{
             a = Integer.parseInt(kentat.get(4).getText());
         }catch(Exception e){
@@ -129,7 +100,7 @@ public class TallennusNapinKuuntelija implements ActionListener{
             ohjeet.setText("Syötä kenttiin numero väliltä 0-255!");
             return;
         }
-        Color co = new Color(s,t,r);
+        Color co = new Color(a,b,c);
         alusta.setVPalkinVari(co);
     }
     /**
@@ -137,25 +108,28 @@ public class TallennusNapinKuuntelija implements ActionListener{
      * mitä kenttiin syötetään
      */
     public void saadaOikeanPalkinVari(){
+        int d=0;
+        int e=0;
+        int f=0;
         try{
             d = Integer.parseInt(kentat.get(7).getText());
-        }catch(Exception e){
+        }catch(Exception ex){
             ohjeet.setText("Syötä kenttiin numero väliltä 0-255!");
             return;
         }
         try{
             e = Integer.parseInt(kentat.get(8).getText());
-        }catch(Exception e){
+        }catch(Exception ex){
             ohjeet.setText("Syötä kenttiin numero väliltä 0-255!");
             return;
         }
         try{
             f = Integer.parseInt(kentat.get(9).getText());
-        }catch(Exception e){
+        }catch(Exception ex){
             ohjeet.setText("Syötä kenttiin numero väliltä 0-255!");
             return;
         }
-        Color co = new Color(s,t,r);
+        Color co = new Color(d,e,f);
         alusta.setOPalkinVari(co);
     }
     

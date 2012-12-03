@@ -6,10 +6,8 @@ package pong.kayttoliittyma;
 
 import java.awt.Container;
 import java.awt.Dimension;
-import javax.swing.JFrame;
-import javax.swing.WindowConstants;
+import javax.swing.*;
 import pong.logiikka.Peli;
-import pong.logiikka.Yksinpeli;
 
 /**
  *
@@ -39,9 +37,10 @@ public class KayttoliittymaPeli implements Runnable{
     @Override
     public void run() {
         frame =new JFrame("PONG");
-        frame.setPreferredSize(new Dimension(500, 500));
+        frame.setPreferredSize(new Dimension(500, 525));
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         luoKomponentit(frame.getContentPane());
+        luoMenu();
         frame.pack();
         frame.setVisible(true);
         new Thread(peli).start();
@@ -54,6 +53,25 @@ public class KayttoliittymaPeli implements Runnable{
         peli.setPaivitettava(alusta); 
         container.add( alusta);
         frame.addKeyListener(new NappaimistonKuuntelija(peli,alusta));
+    }
+    /**
+     * luo pelin käyttöliittymään ylävalikon
+     */
+    public void luoMenu(){
+        JMenuBar bar = new JMenuBar();
+        JMenu menu = new JMenu("Valikko");
+        bar.add(menu);
+        JMenuItem item = new JMenuItem("Uusi yksinpeli");
+        //item.addActionListener(new NapinKuuntelija(frame,1,alusta));
+        //Miksi peli ei pyöri kun nämä toimivat??
+        JMenuItem item2 = new JMenuItem("Uusi kaksinpeli");
+        //item2.addActionListener(new NapinKuuntelija(frame,2,alusta));
+        JMenuItem item3 = new JMenuItem("Asetukset");
+        //item3.addActionListener(new NapinKuuntelijaAsetuksille(frame,alusta));
+        menu.add(item);
+        menu.add(item2);
+        menu.add(item3);
+        frame.setJMenuBar(bar);
     }
     public Paivitettava getPaivitettava(){
         return alusta;

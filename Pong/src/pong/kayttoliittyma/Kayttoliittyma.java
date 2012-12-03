@@ -34,7 +34,7 @@ public class Kayttoliittyma implements Runnable{
     @Override
     public void run(){
         frame =new JFrame("PONG");
-        frame.setPreferredSize(new Dimension(500, 500));
+        frame.setPreferredSize(new Dimension(500, 525));
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         luoKomponentit(frame.getContentPane());
         frame.pack();
