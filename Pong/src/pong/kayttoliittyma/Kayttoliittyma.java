@@ -4,6 +4,8 @@
  */
 package pong.kayttoliittyma;
 
+import pong.kuuntelijat.NapinKuuntelijaAsetuksille;
+import pong.kuuntelijat.NapinKuuntelija;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Container;

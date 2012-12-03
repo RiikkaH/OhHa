@@ -77,7 +77,7 @@ public class Piirtoalusta extends JPanel implements Paivitettava{
         graphics.fillRect(pallo.getX(), pallo.getY(), 10, 10);
         graphics.setColor(Color.DARK_GRAY);
         graphics.fillRect(0, 0, 500, 10);
-        graphics.fillRect(0, 457 , 500, 10);
+        graphics.fillRect(0, 457 , 500, 20);
         if(peli.getJatkuu()== false){
             graphics.setColor(Color.CYAN);
             if(peli.getTilasto1()>peli.getTilasto2()){

@@ -1,3 +1,5 @@
+package pong.logiikka;
+
 
 
 import org.junit.*;

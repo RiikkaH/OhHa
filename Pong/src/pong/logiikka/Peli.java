@@ -121,7 +121,7 @@ public class Peli implements Runnable{
      * @param k Palkki, johon pallon osuminen halutaan tarkastaa
      */
     public void palloOsuuPalkkiin(Pallo p, Palkki k){
-        if(p.getY()+10>k.getY() & p.getY() < k.getY()+50){
+        if(p.getY()+10>=k.getY() & p.getY() <= k.getY()+50){
             if(Math.abs(p.getX()-k.getX())==10){
                 if(k.getNopeus()>0){
                     p.setYMuutos(p.getYMuutos()+1);

@@ -4,9 +4,12 @@
  */
 package pong.kayttoliittyma;
 
+import pong.kuuntelijat.NappaimistonKuuntelija;
 import java.awt.Container;
 import java.awt.Dimension;
 import javax.swing.*;
+import pong.kuuntelijat.NapinKuuntelija;
+import pong.kuuntelijat.NapinKuuntelijaAsetuksille;
 import pong.logiikka.Peli;
 
 /**
@@ -62,12 +65,11 @@ public class KayttoliittymaPeli implements Runnable{
         JMenu menu = new JMenu("Valikko");
         bar.add(menu);
         JMenuItem item = new JMenuItem("Uusi yksinpeli");
-        //item.addActionListener(new NapinKuuntelija(frame,1,alusta));
-        //Miksi peli ei pyöri kun nämä toimivat??
+        item.addActionListener(new NapinKuuntelija(frame,1,alusta));
         JMenuItem item2 = new JMenuItem("Uusi kaksinpeli");
-        //item2.addActionListener(new NapinKuuntelija(frame,2,alusta));
+        item2.addActionListener(new NapinKuuntelija(frame,2,alusta));
         JMenuItem item3 = new JMenuItem("Asetukset");
-        //item3.addActionListener(new NapinKuuntelijaAsetuksille(frame,alusta));
+        item3.addActionListener(new NapinKuuntelijaAsetuksille(frame,alusta));
         menu.add(item);
         menu.add(item2);
         menu.add(item3);

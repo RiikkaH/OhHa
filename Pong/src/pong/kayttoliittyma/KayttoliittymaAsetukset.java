@@ -4,6 +4,8 @@
  */
 package pong.kayttoliittyma;
 
+import pong.kuuntelijat.TallennusNapinKuuntelija;
+import pong.kuuntelijat.TakaisinNapinKuuntelija;
 import java.awt.*;
 import java.util.ArrayList;
 import javax.swing.*;
@@ -79,9 +81,6 @@ public class KayttoliittymaAsetukset implements Runnable{
         this.frame2=frame2;
         this.alusta = a;
         kentat = new ArrayList<TextField>();
-        kentat.add(kentta1);kentat.add(kentta2);kentat.add(kentta3);
-        kentat.add(kentta4);kentat.add(kentta5);kentat.add(kentta6);
-        kentat.add(kentta7);kentat.add(kentta8);kentat.add(kentta9);
     }
     public void setPiirtoalusta(Piirtoalusta a){
         alusta = a;
@@ -95,6 +94,9 @@ public class KayttoliittymaAsetukset implements Runnable{
         frame.setPreferredSize(new Dimension(500, 525));
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         luoKomponentit(frame.getContentPane());
+        kentat.add(kentta1);kentat.add(kentta2);kentat.add(kentta3);
+        kentat.add(kentta4);kentat.add(kentta5);kentat.add(kentta6);
+        kentat.add(kentta7);kentat.add(kentta8);kentat.add(kentta9);
         frame.pack();
         frame.setVisible(true);
     }
