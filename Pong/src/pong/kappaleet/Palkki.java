@@ -34,8 +34,7 @@ public class Palkki {
     }
     /**
      * Metodi liikuttaa palkkia nopeuden verran ylös tai alas
-     * kuitenkin huomioiden sen, ettei palkki mene alueen ulko-
-     * puolelle
+     * kuitenkin huomioiden sen, ettei palkki mene alueen ulkopuolelle
      */
     public void liiku(){
         if(y+nopeus>=457-40){
