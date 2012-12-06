@@ -16,4 +16,4 @@
 24.11 koodailua(mm.asetusjutut) 2h
 25.11 testejä ja javadocia 1h
 3.12 koodailua 1h (ahaa-elämyksiä ja virheiden korjaamista)
-6.12 viimeinen silaus koodiin, käyttöohje, testausdokumentti yms. 2h
+6.12 viimeinen silaus koodiin, käyttöohje, testausdokumentti yms. 2½h
