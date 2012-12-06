@@ -84,7 +84,7 @@ public class TallennusNapinKuuntelija implements ActionListener{
         int a = lueKentta(k1);
         int b = lueKentta(k2);
         int c = lueKentta(k3);
-        if(a<0 || b<0 || c<0){
+        if(a<0 || b<0 || c<0 || a>255 || b>255 || c>255){
             return null;
         }
         Color co = new Color(a,b,c);

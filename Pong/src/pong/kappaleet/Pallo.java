@@ -26,7 +26,10 @@ public class Pallo {
      * pallon nopeus y:n suhteen (positiivinen nopeus alas)
      */
     private double yMuutos;
-
+    /**
+     * Luo pallon, jonka koordinaatit ovat (250,250) ja y:n suuntainen
+     * nopeus 1.3, ja x:n 1.2
+     */
     public Pallo(){
         this.x = 250;
         this.y=250;

@@ -22,6 +22,11 @@ public class Palkki {
      * palkin nopeus (kun nopeus on positiivinen, suunta on alas)
      */
     private int nopeus;
+    /**
+     * Luo palkin, jonka x-koordinaatti annetaan luomisen yhteydessä, ja 
+     * jonka y-koordinaatti on 200 ja nopeus 0.
+     * @param x Palkin x-koordinaatti
+     */
     public Palkki(int x){
         this.x=x;
         this.y=200;

@@ -58,27 +58,27 @@ public class Kayttoliittyma implements Runnable{
      */
     private JPanel luoValikko() {
         JPanel panel = new JPanel(new GridLayout(3, 1));
-        
-        JButton yksinpeli = new JButton("Yksinpeli");
-        yksinpeli.setBackground(Color.GRAY);
-        yksinpeli.setForeground(Color.CYAN);
-        
-        JButton kaksinpeli = new JButton("Kaksinpeli");
-        kaksinpeli.setBackground(Color.GRAY);
-        kaksinpeli.setForeground(Color.CYAN);
-        
-        JButton asetukset = new JButton("Asetukset");
-        asetukset.setBackground(Color.GRAY);
-        asetukset.setForeground(Color.CYAN);
-        
+        JButton yksinpeli = luoNappi("Yksinpeli");
+        JButton kaksinpeli = luoNappi("Kaksinpeli");
+        JButton asetukset = luoNappi("Asetukset");
         yksinpeli.addActionListener(new NapinKuuntelija(frame,1, alusta));
         kaksinpeli.addActionListener(new NapinKuuntelija(frame,2, alusta));
         asetukset.addActionListener(new NapinKuuntelijaAsetuksille(frame, alusta));
-        
         panel.add(yksinpeli);
         panel.add(kaksinpeli);
         panel.add(asetukset);
         return panel;
+    }
+    /**
+     * Luo napin, jonka taustaväri on harmaa ja jonka teksti on syaanilla.
+     * @param teksti Napin teksti
+     * @return JButton
+     */
+    public JButton luoNappi(String teksti){
+        JButton nappi = new JButton(teksti);
+        nappi.setBackground(Color.GRAY);
+        nappi.setForeground(Color.CYAN);
+        return nappi;
     }
 
     public JFrame getFrame() {
